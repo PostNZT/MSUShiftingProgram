@@ -4,6 +4,9 @@
     <rule ref="./vendor/zendframework/zend-coding-standard/ruleset.xml"/>
 
    <!-- Paths to check -->
+   <file>modules</file>
+   <exclude-pattern>modules/*/Database/*</exclude-pattern>
+   <exclude-pattern>modules/*/Resources/*</exclude-pattern>
    <file>app</file>
    <file>tests</file>
 </ruleset>
