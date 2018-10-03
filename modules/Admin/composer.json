@@ -1,0 +1,25 @@
+{
+    "name": "MnkyDevTeam/admin",
+    "description": "",
+    "authors": [
+        {
+            "name": "Jhune Carlo Trogelio",
+            "email": "tjhunecarlo@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "MnkyDevTeam\\Admin\\Providers\\AdminServiceProvider"
+            ],
+            "aliases": {
+                
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "MnkyDevTeam\\Admin\\": ""
+        }
+    }
+}
