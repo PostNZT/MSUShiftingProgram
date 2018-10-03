@@ -1,0 +1,16 @@
+{
+    "name": "Counselor",
+    "alias": "counselor",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "MnkyDevTeam\\Counselor\\Providers\\CounselorServiceProvider"
+    ],
+    "aliases": {},
+    "files": [
+        "start.php"
+    ],
+    "requires": []
+}
