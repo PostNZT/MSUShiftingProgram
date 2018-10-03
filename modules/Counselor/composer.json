@@ -1,0 +1,25 @@
+{
+    "name": "MnkyDevTeam/counselor",
+    "description": "",
+    "authors": [
+        {
+            "name": "Jhune Carlo Trogelio",
+            "email": "tjhunecarlo@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "MnkyDevTeam\\Counselor\\Providers\\CounselorServiceProvider"
+            ],
+            "aliases": {
+                
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "MnkyDevTeam\\Counselor\\": ""
+        }
+    }
+}
