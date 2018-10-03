@@ -1,11 +1,11 @@
 {
-    "name": "AnonJC/LaravelDev5.6",
+    "name": "AnonJC/MSUShiftingProgram",
     "description": "The Laravel Base Framework.",
     "keywords": ["framework", "laravel"],
     "license": "MIT",
     "type": "project",
     "require": {
-        "php": "^7.1.3",
+        "php": "~7.2.7",
         "barryvdh/laravel-cors": "^0.11.2",
         "fideloper/proxy": "^4.0",
         "laravel/framework": "5.6.*",
