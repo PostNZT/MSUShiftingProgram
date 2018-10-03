@@ -54,7 +54,7 @@ return [
                 'MODULE_NAMESPACE',
             ],
         ],
-        'gitkeep' => true,
+        'gitkeep' => false,
     ],
     'paths' => [
         /*
