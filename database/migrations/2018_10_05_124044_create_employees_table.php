@@ -15,6 +15,17 @@ class CreateEmployeesTable extends Migration
     {
         Schema::create('employees', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('username')->unique();
+            $table->string('password');
+            $table->string('first_name');
+            $table->string('middle_name');
+            $table->string('last_name');
+            $table->string('gender')->nullable();
+            $table->string('picture')->nullable();
+            $table->date('birthdate')->nullable();
+            $table->string('employee_id')->nullable();
+            $table->boolean('is_authorize')->default(false);
+            $table->unique(['first_name', 'middle_name', 'last_name'], 'employee_name');
             $table->timestamps();
         });
     }
