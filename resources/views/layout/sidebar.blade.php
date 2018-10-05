@@ -15,7 +15,7 @@
           </li>
           <li class="sub-menu">
             <a href="javascript:;">
-              <i class="fa fa-desktop"></i>
+              <i class="fa fa-sitemap"></i>
               <span>Students</span>
             </a>
             <ul class="sub">
