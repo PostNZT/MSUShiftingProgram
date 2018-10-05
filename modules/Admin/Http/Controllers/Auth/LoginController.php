@@ -10,7 +10,7 @@ use MnkyDevTeam\Admin\Http\Requests\AdminLoginRequest;
 
 final class LoginController extends Controller
 {
-    public function __invoke(AdminLoginRequest $request) 
+    public function __invoke(AdminLoginRequest $request)
     {
         if (Auth::guard('admin')->attempt(['username' => $request->username, 'password' => $request->password])) {
             return redirect()->intended(route('admin.user.dashboard'));

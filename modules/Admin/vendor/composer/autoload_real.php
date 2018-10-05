@@ -19,11 +19,11 @@ class ComposerAutoloaderInit8eb6e09ea49278a590a697114dc776ea
             return self::$loader;
         }
 
-        spl_autoload_register(array('ComposerAutoloaderInit8eb6e09ea49278a590a697114dc776ea', 'loadClassLoader'), true, true);
+        spl_autoload_register(['ComposerAutoloaderInit8eb6e09ea49278a590a697114dc776ea', 'loadClassLoader'], true, true);
         self::$loader = $loader = new \Composer\Autoload\ClassLoader();
-        spl_autoload_unregister(array('ComposerAutoloaderInit8eb6e09ea49278a590a697114dc776ea', 'loadClassLoader'));
+        spl_autoload_unregister(['ComposerAutoloaderInit8eb6e09ea49278a590a697114dc776ea', 'loadClassLoader']);
 
-        $useStaticLoader = PHP_VERSION_ID >= 50600 && !defined('HHVM_VERSION') && (!function_exists('zend_loader_file_encoded') || !zend_loader_file_encoded());
+        $useStaticLoader = PHP_VERSION_ID >= 50600 && ! defined('HHVM_VERSION') && (! function_exists('zend_loader_file_encoded') || ! zend_loader_file_encoded());
         if ($useStaticLoader) {
             require_once __DIR__ . '/autoload_static.php';
 

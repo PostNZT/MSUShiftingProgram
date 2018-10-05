@@ -10,7 +10,7 @@ use Illuminate\Http\RedirectResponse;
 
 final class LogoutController extends Controller
 {
-   public function __invoke() : RedirectResponse
+    public function __invoke() : RedirectResponse
     {
         Auth::guard('admin')->logout();
         return \redirect(\route('admin.login'));

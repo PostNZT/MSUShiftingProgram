@@ -10,21 +10,21 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 
 final class UserLoginTest extends TestCase
 {
-	use RefreshDatabase;
-	use AdminUserFactoryHelper;
+    use RefreshDatabase;
+    use AdminUserFactoryHelper;
 
-	/**
-	 * @test
-	 */
-	public function shouldRedirectToLoginPageIfUserIsNotYetAuthenticated() : void
-	{
-		$this->get(\route('admin.home'))->assertRedirect(\route('admin.login'));
-	}
+    /**
+     * @test
+     */
+    public function shouldRedirectToLoginPageIfUserIsNotYetAuthenticated() : void
+    {
+        $this->get(\route('admin.home'))->assertRedirect(\route('admin.login'));
+    }
 
-	/**
-	 * @test
-	 */
-	public function shouldRedirectProfilePageOnceAuthenticated() : void
+    /**
+     * @test
+     */
+    public function shouldRedirectProfilePageOnceAuthenticated() : void
     {
         $this->fakeUserWithAuth('msu.admin', 'msu.admin');
         $this->post(\route('admin.login.submit'), ['username' => 'msu.admin', 'password' => 'msu.admin'])

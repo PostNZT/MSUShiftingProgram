@@ -49,7 +49,8 @@ class StaffServiceProvider extends ServiceProvider
             __DIR__.'/../Config/config.php' => config_path('staff.php'),
         ], 'config');
         $this->mergeConfigFrom(
-            __DIR__.'/../Config/config.php', 'staff'
+            __DIR__.'/../Config/config.php',
+            'staff'
         );
     }
 
@@ -66,7 +67,7 @@ class StaffServiceProvider extends ServiceProvider
 
         $this->publishes([
             $sourcePath => $viewPath
-        ],'views');
+        ], 'views');
 
         $this->loadViewsFrom(array_merge(array_map(function ($path) {
             return $path . '/modules/staff';
@@ -91,7 +92,7 @@ class StaffServiceProvider extends ServiceProvider
 
     /**
      * Register an additional directory of factories.
-     * 
+     *
      * @return void
      */
     public function registerFactories()

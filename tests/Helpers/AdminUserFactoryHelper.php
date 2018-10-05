@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Hash;
 
 trait AdminUserFactoryHelper
 {
-	public function fakeUserWithAuth(string $username = 'username', string $password = 'password') : User
+    public function fakeUserWithAuth(string $username = 'username', string $password = 'password') : User
     {
         return \factory(User::class)->create([
             'username'  => $username,
