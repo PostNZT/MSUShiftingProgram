@@ -4,7 +4,7 @@
 @endsection
 @section('content')
 	<div class="container">
-      <form class="form-login" action="" method="POST">
+      <form class="form-login" action="{{\route('admin.login.submit')}}" method="POST">
         {{ csrf_field() }}
         <h2 class="form-login-heading">MSU Shifting Program</h2>
         @if ($errors->any())
