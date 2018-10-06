@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	@include('layout.header')
+	@yield('header')
 	<title>@yield('title')</title>
 </head>
 <body>
@@ -11,13 +11,16 @@
 		</header>
 		<aside>
 			<div id="sidebar" class="nav-collapse ">
-				@include('layout.sidebar')
+				@yield('sidebar')
 			</div>
 		</aside>
 		<section id="main-content">
-	    	<section class="wrapper">
-		        <div class="row">
-					@yield('content')
+	    	<section class="wrapper site-min-height">
+		        <div class="row mt">
+					<div class="col-lg-12">
+		           		@yield('content_header')
+						@yield('content')		        
+					</div>
 		        </div>
 	      	</section>
 		</section>
@@ -27,6 +30,6 @@
 		</footer>
 	</section>
 
-	@include('layout.scripts')
+	@yield('scripts')
 </body>
 </html>
