@@ -67,6 +67,12 @@ final class Handler extends ExceptionHandler
             case 'admin':
                 $loginRoute = 'admin.login';
                 break;
+            case 'counselor':
+                $loginRoute = 'counselor.login';
+                break;
+            case 'staff':
+                $loginRoute = 'staff.login';
+                break;
         }
 
         return redirect()->guest(route($loginRoute));
