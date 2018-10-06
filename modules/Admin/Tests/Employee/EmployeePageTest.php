@@ -10,16 +10,16 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class EmployeePageTest extends TestCase
 {
-	use RefreshDatabase;
-	use AdminUserFactoryHelper;
+    use RefreshDatabase;
+    use AdminUserFactoryHelper;
 
-	/**
-	 * @test
-	 */
-	public function shouldDisplayEmployeePage() : void
-	{
-		$this->actingAs($this->fakeAdmin(), 'admin')->get(\route('admin.employee'))
-			->assertSeeText('Employee Listing')
-			->assertStatus(200);
-	}
+    /**
+     * @test
+     */
+    public function shouldDisplayEmployeePage() : void
+    {
+        $this->actingAs($this->fakeAdmin(), 'admin')->get(\route('admin.employee'))
+            ->assertSeeText('Employee Listing')
+            ->assertStatus(200);
+    }
 }

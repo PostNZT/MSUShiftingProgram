@@ -52,9 +52,9 @@ final class Employee extends Authenticatable
         $data['username'] = self::generateUsername($data['first_name'], $data['last_name'], $data['middle_name']);
         $data['password'] = Hash::make($data['username']);
         $data['is_authorize'] = true;
-    	$employee = Employee::firstOrCreate($data);
+        $employee = Employee::firstOrCreate($data);
 
-    	return $employee;
+        return $employee;
     }
 
     public static function enlistEmployeeAsStaff(array $data) : self
@@ -62,8 +62,8 @@ final class Employee extends Authenticatable
         $data['username'] = self::generateUsername($data['first_name'], $data['last_name'], $data['middle_name']);
         $data['password'] = Hash::make($data['username']);
         $data['is_authorize'] = false;
-    	$employee = Employee::firstOrCreate($data);
+        $employee = Employee::firstOrCreate($data);
 
-    	return $employee;
+        return $employee;
     }
 }

@@ -10,18 +10,18 @@ use MnkyDevTeam\Admin\Http\Requests\EnlistEmployeeRequest;
 
 final class EmployeeEnlistController extends Controller
 {
-    public function __invoke(EnlistEmployeeRequest $request) 
+    public function __invoke(EnlistEmployeeRequest $request)
     {
         $data = $request->post();
 
-        $roleChecker = $this->filterInitialEmployeeInfo($data); 
+        $roleChecker = $this->filterInitialEmployeeInfo($data);
 
-        if($roleChecker['role_id'] == 1) {
-            $employee = Employee::enlistEmployeeAsCounselor($this->filterInitialEmployeeInfo($data));    
-        }else{
+        if ($roleChecker['role_id'] == 1) {
+            $employee = Employee::enlistEmployeeAsCounselor($this->filterInitialEmployeeInfo($data));
+        } else {
             $employee = Employee::enlistEmployeeAsStaff($this->filterInitialEmployeeInfo($data));
         }
-        
+
 
         return \redirect(\route('admin.employee'));
     }

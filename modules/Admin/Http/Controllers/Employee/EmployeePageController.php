@@ -15,7 +15,7 @@ final class EmployeePageController extends Controller
     public function __invoke() : View
     {
         $roles = Role::all();
-        
+
         return \view('admin::employee.listing', \compact('roles'));
     }
 }

@@ -10,10 +10,10 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 final class Role extends Authenticatable
 {
-	use Notifiable;
-	protected $guarded = [];
- 	
- 	/**
+    use Notifiable;
+    protected $guarded = [];
+
+    /**
      * This is a magic method to pull the current auth guard in the AppServiceProvider::boot() method
      *
      * @return string
@@ -22,9 +22,9 @@ final class Role extends Authenticatable
     {
         return $this->guard;
     }
-   	
-   	public function employees() : object
+
+    public function employees() : object
     {
         return $this->hasMany(Employee::class, 'role_id');
-    }	
+    }
 }

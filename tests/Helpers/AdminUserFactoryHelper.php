@@ -28,11 +28,11 @@ trait AdminUserFactoryHelper
     }
 
     public function generateDummyEmployeeInfo(
-        string $firstName   = "Jhune Carlo",
-        string $middleName  = "B", 
-        string $lastName    = "Trogelio",
-        string $birthdate   = '1978-02-03',
-        int $role_id        = 1
+        string $firstName = "Jhune Carlo",
+        string $middleName = "B",
+        string $lastName = "Trogelio",
+        string $birthdate = '1978-02-03',
+        int $role_id = 1
     ) : array {
         return \factory(Employee::class)
             ->make([

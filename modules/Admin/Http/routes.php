@@ -22,7 +22,7 @@ Route::group(
             Route::post('logout', "Auth\LogoutController")->name('admin.logout');
         });
 
-        Route::group(['middleware' => 'auth:admin', 'prefix' => 'employee', 'namespace' => 'Employee'], function() {
+        Route::group(['middleware' => 'auth:admin', 'prefix' => 'employee', 'namespace' => 'Employee'], function () {
             Route::get('/', 'EmployeePageController')->name('admin.employee');
             Route::post('/', 'EmployeeEnlistController')->name('admin.employee.enlist');
         });
