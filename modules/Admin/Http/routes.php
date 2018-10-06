@@ -17,9 +17,14 @@ Route::group(
                 return \redirect(\route('admin.user.dashboard'));
             })->name('admin.home');
 
-            Route::get('profile', "User\ProfileController")->name('admin.user.dashboard');
+            Route::get('dashboard', "User\ProfileController")->name('admin.user.dashboard');
 
             Route::post('logout', "Auth\LogoutController")->name('admin.logout');
+        });
+
+        Route::group(['middleware' => 'auth:admin', 'prefix' => 'employee', 'namespace' => 'Employee'], function() {
+            Route::get('/', 'EmployeePageController')->name('admin.employee');
+            Route::post('/', 'EmployeeEnlistController')->name('admin.employee.enlist');
         });
     }
 );
