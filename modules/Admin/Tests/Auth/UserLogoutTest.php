@@ -18,7 +18,7 @@ final class UserLogoutTest extends TestCase
      */
     public function shouldRedirectToLoginPageUponLogout() : void
     {
-        $this->actingAs($this->fakeUser(), 'admin')
+        $this->actingAs($this->fakeAdmin(), 'admin')
             ->post(\route('admin.logout'), [])
             ->assertRedirect(\route('admin.login'));
     }
