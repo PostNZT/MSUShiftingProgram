@@ -6,21 +6,21 @@ namespace Composer\Autoload;
 
 class ComposerStaticInit8eb6e09ea49278a590a697114dc776ea
 {
-    public static $prefixLengthsPsr4 = array (
-        'M' => 
-        array (
+    public static $prefixLengthsPsr4 = [
+        'M' =>
+         [
             'MnkyDevTeam\\Admin\\' => 18,
-        ),
-    );
+         ],
+    ];
 
-    public static $prefixDirsPsr4 = array (
-        'MnkyDevTeam\\Admin\\' => 
-        array (
+    public static $prefixDirsPsr4 = [
+        'MnkyDevTeam\\Admin\\' =>
+         [
             0 => __DIR__ . '/../..' . '/',
-        ),
-    );
+         ],
+    ];
 
-    public static $classMap = array (
+    public static $classMap = [
         'MnkyDevTeam\\Admin\\Database\\Seeders\\AdminDatabaseSeeder' => __DIR__ . '/../..' . '/Database/Seeders/AdminDatabaseSeeder.php',
         'MnkyDevTeam\\Admin\\Http\\Controllers\\AdminController' => __DIR__ . '/../..' . '/Http/Controllers/AdminController.php',
         'MnkyDevTeam\\Admin\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/Http/Controllers/Auth/LoginController.php',
@@ -38,7 +38,7 @@ class ComposerStaticInit8eb6e09ea49278a590a697114dc776ea
         'MnkyDevTeam\\Admin\\Tests\\Employee\\Api\\EmployeeListingTest' => __DIR__ . '/../..' . '/Tests/Employee/Api/EmployeeListingTest.php',
         'MnkyDevTeam\\Admin\\Tests\\Employee\\EmployeeEnlistmentTest' => __DIR__ . '/../..' . '/Tests/Employee/EmployeeEnlistmentTest.php',
         'MnkyDevTeam\\Admin\\Tests\\Employee\\EmployeePageTest' => __DIR__ . '/../..' . '/Tests/Employee/EmployeePageTest.php',
-    );
+    ];
 
     public static function getInitializer(ClassLoader $loader)
     {
@@ -46,7 +46,6 @@ class ComposerStaticInit8eb6e09ea49278a590a697114dc776ea
             $loader->prefixLengthsPsr4 = ComposerStaticInit8eb6e09ea49278a590a697114dc776ea::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit8eb6e09ea49278a590a697114dc776ea::$prefixDirsPsr4;
             $loader->classMap = ComposerStaticInit8eb6e09ea49278a590a697114dc776ea::$classMap;
-
         }, null, ClassLoader::class);
     }
 }

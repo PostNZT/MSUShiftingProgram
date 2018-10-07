@@ -20,14 +20,14 @@ final class EmployeeListingTest extends TestCase
     /**
      * @test
      */
-    public function shouldDisplayAllEmployees() : void 
+    public function shouldDisplayAllEmployees() : void
     {
-    	$employeeCollection = Collection::make(new EmployeeCollection(new EmployeeResource(
-    		Employee::all()
-    	)));
+        $employeeCollection = Collection::make(new EmployeeCollection(new EmployeeResource(
+            Employee::all()
+        )));
 
-    	$this->actingAs($this->fakeAdmin(), 'admin')
-    		->get(\route('admin.employee.listing.api'))
-    		->assertStatus(200);
+        $this->actingAs($this->fakeAdmin(), 'admin')
+            ->get(\route('admin.employee.listing.api'))
+            ->assertStatus(200);
     }
 }

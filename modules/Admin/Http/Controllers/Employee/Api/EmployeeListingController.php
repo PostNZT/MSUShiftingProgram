@@ -24,7 +24,7 @@ final class EmployeeListingController extends Controller
         return $employeeCollection;
     }
 
-    public function datatables() 
+    public function datatables()
     {
         return $this->makeDataTable($this->listing());
     }

@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 declare(strict_types=1);
 
@@ -9,8 +9,8 @@ use Yajra\DataTables\DataTables;
 
 trait DataTableTrait
 {
-	public function makeDataTable(Collection $collection) : object
-	{
-		return DataTables::of($collection)->make(true);
-	}
+    public function makeDataTable(Collection $collection) : object
+    {
+        return DataTables::of($collection)->make(true);
+    }
 }

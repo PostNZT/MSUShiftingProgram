@@ -53,7 +53,7 @@ final class Employee extends Authenticatable
         $data['password'] = Hash::make($data['username']);
         $data['is_authorize'] = true;
         $employee = Employee::firstOrCreate($data);
-        
+
         return $employee;
     }
 
