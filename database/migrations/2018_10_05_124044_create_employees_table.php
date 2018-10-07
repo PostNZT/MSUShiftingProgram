@@ -21,6 +21,7 @@ class CreateEmployeesTable extends Migration
             $table->string('first_name');
             $table->string('middle_name');
             $table->string('last_name');
+            $table->uuid('uuid')->unique();
             $table->string('gender')->nullable();
             $table->string('picture')->nullable();
             $table->date('birthdate')->nullable();

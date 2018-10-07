@@ -9,6 +9,7 @@ $factory->define(App\Entities\Employee\Employee::class, function (Faker $faker) 
         'last_name'         			=> $faker->lastName,
         'gender'                        => $faker->randomElements(['male', 'female'])[0],
         'birthdate'                     => $faker->date,
+        'uuid'                          => $faker->uuid,
         'employee_id'					=> '2015-8338',
         'role_id'                       => 2,
         'is_authorize'					=> false
