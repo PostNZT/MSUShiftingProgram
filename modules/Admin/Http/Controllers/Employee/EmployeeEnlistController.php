@@ -32,6 +32,7 @@ final class EmployeeEnlistController extends Controller
             'first_name'        => $data['first_name'],
             'middle_name'       => $data['middle_name'],
             'last_name'         => $data['last_name'],
+            'employee_id'       => $data['employee_id'],
             'birthdate'         => $data['birthdate'],
             'role_id'           => $data['role_id']
         ];

@@ -31,6 +31,7 @@ trait AdminUserFactoryHelper
         string $firstName = "Jhune Carlo",
         string $middleName = "B",
         string $lastName = "Trogelio",
+        string $employee_id = "2015-8338",
         string $birthdate = '1978-02-03',
         int $role_id = 1
     ) : array {
@@ -39,6 +40,7 @@ trait AdminUserFactoryHelper
                 'first_name'        => $firstName,
                 'middle_name'       => $middleName,
                 'last_name'         => $lastName,
+                'employee_id'       => $employee_id,
                 'birthdate'         => $birthdate,
                 'role_id'           => $role_id
             ])->toArray();

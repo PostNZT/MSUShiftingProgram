@@ -37,6 +37,7 @@ final class EmployeeEnlistmentTest extends TestCase
             "Jhune Carlo",
             "B",
             "Trogelio",
+            '2015-8338',
             '1978-02-03',
             2
         );

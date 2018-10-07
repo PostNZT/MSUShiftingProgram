@@ -32,11 +32,17 @@
       <span>Employees </span>
     </a>
   </li>
-  <li>
-    <a href="">
+  <li class="sub-menu">
+    <a href="javascript:;">
       <i class="fa fa-sitemap"></i>
-      <span>Students </span>
-    </a>
+      <span>Students</span>
+      </a>
+    <ul class="sub">
+      <li><a href="">General</a></li>
+      <li><a href="">Buttons</a></li>
+      <li><a href="">Panels</a></li>
+      <li><a href="">Font Awesome</a></li>
+    </ul>
   </li>
 </ul>
 @endsection

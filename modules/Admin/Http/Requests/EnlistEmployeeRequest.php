@@ -20,6 +20,7 @@ class EnlistEmployeeRequest extends FormRequest
             'first_name'    => 'required|regex:/^[\pL\s\-]+$/u|min:2',
             'middle_name'   => 'required|regex:/^[\pL\s\-]+$/u|min:1',
             'last_name'     => 'required|regex:/^[\pL\s\-]+$/u|min:2',
+            'employee_id'    => 'required|min:4',
             'birthdate'     => 'required|date',
             'role_id'       => 'required|integer'
         ];
