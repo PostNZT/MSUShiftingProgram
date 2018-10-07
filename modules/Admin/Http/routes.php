@@ -17,7 +17,7 @@ Route::group(
                 return \redirect(\route('admin.user.dashboard'));
             })->name('admin.home');
 
-            Route::get('dashboard', "User\ProfileController")->name('admin.user.dashboard');
+            Route::get('dashboard', "User\DashboardController")->name('admin.user.dashboard');
 
             Route::post('logout', "Auth\LogoutController")->name('admin.logout');
         });

@@ -7,7 +7,7 @@
 <body>
 	<section id="container">
 		<header class="header black-bg">
-			@include('layout.navbar')
+			@yield('navbar')
 		</header>
 		<aside>
 			<div id="sidebar" class="nav-collapse ">

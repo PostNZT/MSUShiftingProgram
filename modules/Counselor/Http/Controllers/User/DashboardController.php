@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace MnkyDevTeam\Admin\Http\Controllers\User;
+namespace MnkyDevTeam\Counselor\Http\Controllers\User;
 
 use Illuminate\View\View;
 use Illuminate\Http\Request;
@@ -10,12 +10,12 @@ use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
 
-final class ProfileController extends Controller
+final class DashboardController extends Controller
 {
     public function __invoke() : View
     {
-        $user = Auth::guard('admin')->user();
+        $user = Auth::guard('counselor')->user();
 
-        return \view('admin::user.dashboard', \compact('user'));
+        return \view('counselor::user.dashboard', \compact('user'));
     }
 }

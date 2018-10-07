@@ -22,13 +22,13 @@
     <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
   </div>
   <!--logo start-->
-  <a href="{{\route('admin.user.dashboard')}}" class="logo"><b><span>MSU</span>Shifting Program</b></a>
+  <a href="{{\route('counselor.user.dashboard')}}" class="logo"><b><span>MSU</span>Shifting Program</b></a>
   <!--logo end-->
 
   <div class="top-menu">
     <ul class="nav pull-right top-menu">
       <li>
-        <form method="post" action="{{\route('admin.logout')}}">
+        <form method="post" action="{{\route('counselor.logout')}}">
           {{ csrf_field() }}
           <button type="submit" class="logout" >Logout</button>
         </form>
@@ -40,15 +40,15 @@
 @section('sidebar')
 <ul class="sidebar-menu" id="nav-accordion">
   <p class="centered"><a href="profile.html"><img src="{{asset('img/msu.png')}}" class="img-circle"  height= "80" width="80"></a></p>
-  <h5 class="centered">MSU-MAIN ADMIN</h5>
+  <h5 class="centered">MSU-MAIN Counselor</h5>
   <li class="mt">
-    <a class="active" href="{{\route('admin.user.dashboard')}}">
+    <a class="active" href="{{\route('counselor.user.dashboard')}}">
       <i class="fa fa-dashboard"></i>
       <span>Dashboard</span>
     </a>
   </li>
   <li>
-    <a href="{{\route('admin.employee')}}">
+    <a href="">
       <i class="fa fa-group"></i>
       <span>Employees </span>
     </a>

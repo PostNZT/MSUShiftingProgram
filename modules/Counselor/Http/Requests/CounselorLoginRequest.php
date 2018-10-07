@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace MnkyDevTeam\Admin\Http\Requests;
+namespace MnkyDevTeam\Counselor\Http\Requests;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Http\FormRequest;
 
-final class AdminLoginRequest extends FormRequest
+final class CounselorLoginRequest extends FormRequest
 {
     /**
      * Get the validation rules that apply to the request.
