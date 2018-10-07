@@ -68,7 +68,7 @@
 
 //datetime picker start
 
-$(".form_datetime").datetimepicker({format: 'yyyy-mm-dd hh:ii'});
+// $(".form_datetime").datetimepicker({format: 'yyyy-mm-dd hh:ii'});
 
 $(".form_datetime-component").datetimepicker({
     format: "dd MM yyyy - hh:ii"

@@ -10,7 +10,11 @@
   <!-- Custom styles for this template -->
   <link href="{{asset('css/style.css')}}" rel="stylesheet">
   <link href="{{asset('css/style-responsive.css')}}" rel="stylesheet">
-
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jszip-2.5.0/dt-1.10.16/b-1.5.1/b-html5-1.5.1/r-2.2.1/sc-1.4.3/datatables.min.css"/>
+  <script
+        src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
 @endsection
 @section('title')
 	MSUOVCAA - Employee Listing
@@ -55,157 +59,18 @@
 @section('content')
 <div class="row mt">
   <div class="col-lg-4">
-    <section class="panel">
-       <div class="panel-body">
-        <h4 class="mb"><i class="fa fa-angle-right"></i> Create Employee:</h4>
-        <form class="form-horizontal style-form" method="POST" action="{{\route('admin.employee.enlist')}}">
-          {{ csrf_field() }}
-          @if ($errors->any())
-              <div class="alert alert-danger text-xs">
-                  <ul>
-                      @foreach ($errors->all() as $error)
-                          <li class="text-sm">{{ $error }}</li>
-                      @endforeach
-                  </ul>
-              </div>
-          @endif
-          <div class="form-group">
-            <div class="col-sm-12">
-              <div class="{{$errors->has('first_name') ? "has-error":''}}">
-                <input class="form-control" type="text" placeholder="First Name" name="first_name" value="{{\old('first_name')}}">
-              </div>
-              <br>
-              <div class="{{$errors->has('middle_name') ? "has-error":''}}">
-                <input class="form-control" type="text" placeholder="Middle Name" name="middle_name" value="{{\old('middle_name')}}">
-              </div>
-              <br>
-              <div class="{{$errors->has('last_name') ? "has-error":''}}">
-                <input class="form-control" type="text" placeholder="Last Name" name="last_name" value="{{\old('last_name')}}">
-              </div>
-              <br>
-              <div class="{{$errors->has('employee_id') ? "has-error":''}}">
-                <input class="form-control" type="text" placeholder="Employee ID" name="employee_id" value="{{\old('employee_id')}}">
-              </div>
-              <div class="{{$errors->has('birthdate') ? "has-error":''}}">
-                <span class="help-block">Birthdate:</span>
-                <input class="form-control form-control-inline input-medium default-date-picker" size="16" type="text" name="birthdate" value="<?php echo date("m/d/Y");?>">
-              </div>
-              <div class="{{$errors->has('role_id') ? "has-error":''}}">  
-                <span class="help-block"> Role:</span>
-                <select class="form-control" name="role_id">
-                  <option value="" disabled {{empty(\old('role_id')) ? "selected" : ""}}>Select Role</option>
-                  @if ($roles->isNotEmpty())
-                      @foreach ($roles as $role)
-                          <option value="{{$role->id}}" {{!empty(\old('role_id')) ? (\old('role_id') == $role->id ? "selected" : "") : ""}}>{{$role->name}}</option>
-                      @endforeach
-                  @endif
-                </select>
-              </div>
-            </div>
-          </div>
-          <div style="text-align: right;">
-             <button type="submit" class="btn btn-theme03 "><i class="fa fa-check"></i> Submit</button>
-          </div>
-        </form>
-       </div>
-    </section>
+    @include('admin::employee.layout.employee-enlisting')
   </div>
   <div class="col-lg-8">
-    <section class="panel">
-      <div class="panel-body">
-        <table class="table table-striped table-advance table-hover">
-          <h4><i class="fa fa-angle-right"></i> Advanced Table</h4>
-          <hr>
-          <thead>
-            <tr>
-              <th><i class="fa fa-bullhorn"></i> First Name</th>
-              <th class="hidden-phone"><i class="fa fa-question-circle"></i> Middle Name</th>
-              <th><i class="fa fa-bookmark"></i> Last Name</th>
-              <th><i class=" fa fa-edit"></i> Employee ID</th>
-              <th>Authentication Level</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                <a href="basic_table.html#">Company Ltd</a>
-              </td>
-              <td class="hidden-phone">Lorem Ipsum dolor</td>
-              <td>12000.00$ </td>
-              <td><span class="label label-info label-mini">Due</span></td>
-              <td>
-                <button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button>
-                <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
-                <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <a href="basic_table.html#">
-                  Dashio co
-                  </a>
-              </td>
-              <td class="hidden-phone">Lorem Ipsum dolor</td>
-              <td>17900.00$ </td>
-              <td><span class="label label-warning label-mini">Due</span></td>
-              <td>
-                <button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button>
-                <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
-                <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <a href="basic_table.html#">
-                  Another Co
-                  </a>
-              </td>
-              <td class="hidden-phone">Lorem Ipsum dolor</td>
-              <td>14400.00$ </td>
-              <td><span class="label label-success label-mini">Paid</span></td>
-              <td>
-                <button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button>
-                <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
-                <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <a href="basic_table.html#">Dashio ext</a>
-              </td>
-              <td class="hidden-phone">Lorem Ipsum dolor</td>
-              <td>22000.50$ </td>
-              <td><span class="label label-success label-mini">Paid</span></td>
-              <td>
-                <button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button>
-                <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
-                <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <a href="basic_table.html#">Total Ltd</a>
-              </td>
-              <td class="hidden-phone">Lorem Ipsum dolor</td>
-              <td>12120.00$ </td>
-              <td><span class="label label-warning label-mini">Due</span></td>
-              <td>
-                <button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button>
-                <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
-                <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
+    @include('admin::employee.layout.employee-listing')
   </div>
 </div>
 
 @endsection
 
 @section('scripts')
-  <script src="{{asset('lib/jquery/jquery.min.js')}}"></script>
+  
+  <script type="text/javascript" src="https://cdn.datatables.net/v/dt/jszip-2.5.0/dt-1.10.16/b-1.5.1/b-html5-1.5.1/r-2.2.1/sc-1.4.3/datatables.js"></script>
 
   <script src="{{asset('lib/bootstrap/js/bootstrap.min.js')}}"></script>
   <script class="include" type="text/javascript" src="{{asset('lib/jquery.dcjqaccordion.2.7.js')}}"></script>

@@ -66,4 +66,9 @@ final class Employee extends Authenticatable
 
         return $employee;
     }
+    
+    public function role() : object
+    {
+        return $this->belongsTo(Role::class, 'role_id');
+    }
 }
