@@ -5,13 +5,13 @@ declare(strict_types=1);
 namespace MnkyDevTeam\Admin\Tests\Employee;
 
 use Tests\TestCase;
-use Tests\Helpers\AdminUserFactoryHelper;
+use Tests\Helpers\AdminFactoryHelper;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 final class EmployeeEnlistmentTest extends TestCase
 {
     use RefreshDatabase;
-    use AdminUserFactoryHelper;
+    use AdminFactoryHelper;
 
     /**
      * @test

@@ -6,7 +6,7 @@ namespace MnkyDevTeam\Admin\Tests\Employee\Api;
 
 use Tests\TestCase;
 use App\Entities\Employee\Employee;
-use Tests\Helpers\AdminUserFactoryHelper;
+use Tests\Helpers\AdminFactoryHelper;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use MnkyDevTeam\Admin\Http\Resources\Employee\EmployeeCollection;
@@ -15,7 +15,7 @@ use MnkyDevTeam\Admin\Http\Resources\Employee\Employee as EmployeeResource;
 final class EmployeeListingTest extends TestCase
 {
     use RefreshDatabase;
-    use AdminUserFactoryHelper;
+    use AdminFactoryHelper;
 
     /**
      * @test

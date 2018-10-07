@@ -8,7 +8,7 @@ use App\Entities\User\User;
 use App\Entities\Employee\Employee;
 use Illuminate\Support\Facades\Hash;
 
-trait AdminUserFactoryHelper
+trait AdminFactoryHelper
 {
     public function fakeUserWithAuth(string $username = 'username', string $password = 'password') : User
     {
