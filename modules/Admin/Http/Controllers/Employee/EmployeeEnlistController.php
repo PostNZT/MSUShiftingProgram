@@ -13,7 +13,6 @@ final class EmployeeEnlistController extends Controller
     public function __invoke(EnlistEmployeeRequest $request)
     {
         $data = $request->post();
-
         $roleChecker = $this->filterInitialEmployeeInfo($data);
 
         if ($roleChecker['role_id'] == 1) {
@@ -21,9 +20,9 @@ final class EmployeeEnlistController extends Controller
         } else {
             $employee = Employee::enlistEmployeeAsStaff($this->filterInitialEmployeeInfo($data));
         }
-
-
-        return \redirect(\route('admin.employee'));
+            
+        // dd(route('admin.employee.details', \compact('employee')));
+        return \redirect(\route('admin.employee.details', \compact('employee')));
     }
 
     private function filterInitialEmployeeInfo(array $data) : array

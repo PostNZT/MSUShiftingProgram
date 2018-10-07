@@ -18,8 +18,8 @@
 @endsection
 @section('sidebar')
 <ul class="sidebar-menu" id="nav-accordion">
-  <p class="centered"><a href="profile.html"><img src="img/ui-sam.jpg" class="img-circle" width="80"></a></p>
-  <h5 class="centered">Jhune Carlo Trogelio</h5>
+  <p class="centered"><a href="profile.html"><img src="{{asset('img/msu.png')}}" class="img-circle"  height= "80" width="80"></a></p>
+  <h5 class="centered">MSU-MAIN ADMIN</h5>
   <li class="mt">
     <a class="active" href="{{\route('admin.user.dashboard')}}">
       <i class="fa fa-dashboard"></i>

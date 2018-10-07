@@ -18,6 +18,8 @@
 </section>
 
 <script>
+
+
   $(document).ready(function () {
       $(function() {
           var table = $('#employee-table').DataTable({
@@ -33,8 +35,8 @@
               ],
               "autoWidth":false,
               "columns": [
-                  { "data": "id", "orderable": true, "searchable": false },
-                  { "data": "first_name", "orderable": false "searchable": true },
+                  { "data": "id", "orderable": true, "searchable": true },
+                  { "data": "first_name", "orderable": true, "searchable": true },
                   { "data": "middle_name", "orderable": false, "searchable": true },
                   { "data": "last_name", "orderable": false, "searchable": true },
                   { "data": "employee_id", "orderable": false, "searchable": true },
@@ -47,11 +49,11 @@
                   url: "{{\route('admin.employee.listing.api.datatables')}}"
               }
           });
-          //click rows
-          // $('#partner-table tbody').on('click', 'tr', function () {
-          //     var data = table.row( this ).data();
-          //     window.location.href = "/partners/"+ data['id'] +"/detail";
-          // });
+          // click rows
+          $('#employee-table tbody').on('click', 'tr', function () {
+              var data = table.row( this ).data();
+              window.location.href = "/employee/"+ data['uuid'] +"/details";
+          });
       });
   });
 </script>

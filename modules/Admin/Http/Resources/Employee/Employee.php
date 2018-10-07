@@ -20,7 +20,8 @@ class Employee extends JsonResource
             'middle_name'       => $this->middle_name,
             'last_name'         => $this->last_name,
             'employee_id'       => $this->employee_id,
-            'role_id'           => $this->role->name
+            'role_id'           => $this->role->name,
+            'uuid'              => $this->uuid
         ];
     }
 }

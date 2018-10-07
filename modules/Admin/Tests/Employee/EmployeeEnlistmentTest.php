@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace MnkyDevTeam\Admin\Tests\Employee;
 
 use Tests\TestCase;
+use App\Entities\Employee\Employee;
 use Tests\Helpers\AdminFactoryHelper;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
@@ -53,13 +54,19 @@ final class EmployeeEnlistmentTest extends TestCase
     /**
      * @test
      */
-    public function shouldRedirectAfterEnlistingCounselorEmployee() : void
+    public function shouldRedirectAfterEnlistingEmployee() : void
     {
-        $counselorEmployee = $this->generateDummyEmployeeInfo();
+        $employee = $this->generateDummyEmployeeInfo();
 
         $response = $this->actingAs($this->fakeAdmin(), 'admin')
-            ->post(\route('admin.employee.enlist'), $counselorEmployee);
-
-        $response->assertRedirect(\route('admin.employee'))->assertStatus(302);
+            ->post(\route('admin.employee.enlist'), $employee);
+        
+        $employee =Employee::where([
+            "first_name" => "Jhune Carlo",
+            "middle_name" => "B",
+            "last_name" => "Trogelio"
+        ])->first();
+        // dd($employee);
+        $response->assertRedirect(\route('admin.employee.details', \compact('employee')))->assertStatus(302);
     }
 }

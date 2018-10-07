@@ -15,6 +15,16 @@ final class Employee extends Authenticatable
     use Notifiable;
     protected $guarded = [];
 
+    public function getRouteKeyName() : string
+    {
+        return 'uuid';
+    }
+    
+    public function getFullNameAttribute() : string
+    {
+        return $this->first_name . " " . $this->last_name;
+    }
+
     public static function generateUsername($first_name, $last_name, $middle_name = "") : string
     {
         $username = "";

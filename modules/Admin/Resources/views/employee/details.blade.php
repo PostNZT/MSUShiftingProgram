@@ -49,21 +49,68 @@
   </li>
 </ul>
 @endsection
-@section('content_header')
-<div class="col-lg-12 main-chart">
-  <div class="border-head">
-    <h3>Employee Listing</h3>
-  </div>
-</div>
-@endsection
+
 @section('content')
 <div class="row mt">
-  <div class="col-lg-4">
-    @include('admin::employee.layout.employee-enlisting')
+  <div class="col-lg-12">
+    <div class="row content-panel">
+      <div class="col-md-2 profile-text mt mb centered">
+        <div class="right-divider hidden-sm hidden-xs">
+          <h4>1922</h4>
+                  <h6>FOLLOWERS</h6>
+                  <h4>290</h4>
+                  <h6>FOLLOWING</h6>
+                  <h4>$ 13,980</h4>
+                  <h6>MONTHLY EARNINGS</h6>
+        </div>
+      </div>
+      <!-- /col-md-4 -->
+      <div class="col-md-6 profile-text">
+        <h3>{{$employee->fullName}}</h3>
+        <h6>{{$employee->role->name}}</h6>
+       
+      </div>
+      <!-- /col-md-4 -->
+      <div class="col-md-4 centered">
+        <div class="profile-pic">
+          <p><img src="img/ui-sam.jpg" class="img-circle"></p>
+          
+        </div>
+      </div>
+      <!-- /col-md-4 -->
+    </div>
+    <!-- /row -->
   </div>
-  <div class="col-lg-8">
-    @include('admin::employee.layout.employee-listing')
-  </div>
+  <div class="col-lg-12 mt">
+    <div class="row content-panel">
+      <div class="panel-heading">
+        <ul class="nav nav-tabs nav-justified">
+          <li class="active">
+            <a data-toggle="tab" href="#overview">Overview</a>
+          </li>
+          <li>
+            <a data-toggle="tab" href="#edit">Edit Profile</a>
+          </li>
+        </ul>
+      </div>
+      <!-- /panel-heading -->
+      <div class="panel-body">
+        <div class="tab-content">
+          <div id="overview" class="tab-pane active">
+            <div class="row">
+              
+              
+            </div>
+          </div>
+          <div id="edit" class="tab-pane">
+            <div class="row">
+              
+
+            </div>   
+          </div>
+        </div>
+      </div>
+    </div>
 </div>
 
 @endsection
