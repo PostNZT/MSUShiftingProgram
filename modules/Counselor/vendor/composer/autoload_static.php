@@ -6,25 +6,25 @@ namespace Composer\Autoload;
 
 class ComposerStaticInit96f16ca8eac09201835f9c9ab5846bbc
 {
-    public static $prefixLengthsPsr4 = [
-        'M' =>
-         [
+    public static $prefixLengthsPsr4 = array (
+        'M' => 
+        array (
             'MnkyDevTeam\\Counselor\\' => 22,
-         ],
-    ];
+        ),
+    );
 
-    public static $prefixDirsPsr4 = [
-        'MnkyDevTeam\\Counselor\\' =>
-         [
+    public static $prefixDirsPsr4 = array (
+        'MnkyDevTeam\\Counselor\\' => 
+        array (
             0 => __DIR__ . '/../..' . '/',
-         ],
-    ];
+        ),
+    );
 
-    public static $classMap = [
+    public static $classMap = array (
         'MnkyDevTeam\\Counselor\\Database\\Seeders\\CounselorDatabaseSeeder' => __DIR__ . '/../..' . '/Database/Seeders/CounselorDatabaseSeeder.php',
         'MnkyDevTeam\\Counselor\\Http\\Controllers\\CounselorController' => __DIR__ . '/../..' . '/Http/Controllers/CounselorController.php',
         'MnkyDevTeam\\Counselor\\Providers\\CounselorServiceProvider' => __DIR__ . '/../..' . '/Providers/CounselorServiceProvider.php',
-    ];
+    );
 
     public static function getInitializer(ClassLoader $loader)
     {
@@ -32,6 +32,7 @@ class ComposerStaticInit96f16ca8eac09201835f9c9ab5846bbc
             $loader->prefixLengthsPsr4 = ComposerStaticInit96f16ca8eac09201835f9c9ab5846bbc::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit96f16ca8eac09201835f9c9ab5846bbc::$prefixDirsPsr4;
             $loader->classMap = ComposerStaticInit96f16ca8eac09201835f9c9ab5846bbc::$classMap;
+
         }, null, ClassLoader::class);
     }
 }

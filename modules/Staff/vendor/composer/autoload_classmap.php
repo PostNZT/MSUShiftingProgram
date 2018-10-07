@@ -5,8 +5,8 @@
 $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
-return [
+return array(
     'MnkyDevTeam\\Staff\\Database\\Seeders\\StaffDatabaseSeeder' => $baseDir . '/Database/Seeders/StaffDatabaseSeeder.php',
     'MnkyDevTeam\\Staff\\Http\\Controllers\\StaffController' => $baseDir . '/Http/Controllers/StaffController.php',
     'MnkyDevTeam\\Staff\\Providers\\StaffServiceProvider' => $baseDir . '/Providers/StaffServiceProvider.php',
-];
+);
