@@ -19,6 +19,27 @@
 @section('title')
 	MSUOVCAA - Employee Listing
 @endsection
+
+@section('navbar')
+  <div class="sidebar-toggle-box">
+    <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
+  </div>
+  <!--logo start-->
+  <a href="{{\route('admin.user.dashboard')}}" class="logo"><b><span>MSU</span>Shifting Program</b></a>
+  <!--logo end-->
+
+  <div class="top-menu">
+    <ul class="nav pull-right top-menu">
+      <li>
+        <form method="post" action="{{\route('admin.logout')}}">
+          {{ csrf_field() }}
+          <button type="submit" class="logout" >Logout</button>
+        </form>
+      </li>
+    </ul>
+  </div>
+@endsection
+
 @section('sidebar')
 <ul class="sidebar-menu" id="nav-accordion">
   <p class="centered"><a href="profile.html"><img src="{{asset('img/msu.png')}}" class="img-circle"  height= "80" width="80"></a></p>
@@ -52,65 +73,20 @@
 
 @section('content')
 <div class="row mt">
-  <div class="col-lg-12">
-    <div class="row content-panel">
-      <div class="col-md-2 profile-text mt mb centered">
-        <div class="right-divider hidden-sm hidden-xs">
-          <h4>1922</h4>
-                  <h6>FOLLOWERS</h6>
-                  <h4>290</h4>
-                  <h6>FOLLOWING</h6>
-                  <h4>$ 13,980</h4>
-                  <h6>MONTHLY EARNINGS</h6>
-        </div>
-      </div>
-      <!-- /col-md-4 -->
-      <div class="col-md-6 profile-text">
-        <h3>{{$employee->fullName}}</h3>
-        <h6>{{$employee->role->name}}</h6>
-       
-      </div>
-      <!-- /col-md-4 -->
-      <div class="col-md-4 centered">
-        <div class="profile-pic">
-          <p><img src="img/ui-sam.jpg" class="img-circle"></p>
-          
-        </div>
-      </div>
-      <!-- /col-md-4 -->
-    </div>
-    <!-- /row -->
-  </div>
-  <div class="col-lg-12 mt">
-    <div class="row content-panel">
-      <div class="panel-heading">
-        <ul class="nav nav-tabs nav-justified">
-          <li class="active">
-            <a data-toggle="tab" href="#overview">Overview</a>
-          </li>
-          <li>
-            <a data-toggle="tab" href="#edit">Edit Profile</a>
-          </li>
-        </ul>
-      </div>
-      <!-- /panel-heading -->
+  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+    <section class="panel">
       <div class="panel-body">
-        <div class="tab-content">
-          <div id="overview" class="tab-pane active">
-            <div class="row">
-              
-              
-            </div>
-          </div>
-          <div id="edit" class="tab-pane">
-            <div class="row">
-              
-
-            </div>   
-          </div>
-        </div>
+        @include('admin::employee.layout.details-employee-profile-box')
+      </div>  
+    </section>
+  </div>
+  <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+    <section class="panel">
+      <div class="panel-body">
+        @include('admin::employee.layout.details-employee-update-box')
       </div>
-    </div>
+    </section>
+  </div>
 </div>
 
 @endsection

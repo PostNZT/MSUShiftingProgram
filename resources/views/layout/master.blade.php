@@ -16,7 +16,7 @@
 		</aside>
 		<section id="main-content">
 	    	<section class="wrapper site-min-height">
-		        <div class="row mt">
+		        <div class="row">
 					<div class="col-lg-12">
 		           		@yield('content_header')
 						@yield('content')		        
