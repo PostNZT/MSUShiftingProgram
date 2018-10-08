@@ -19,7 +19,7 @@ final class Employee extends Authenticatable
     {
         return 'uuid';
     }
-    
+
     public function getFullNameAttribute() : string
     {
         return $this->first_name . " " . $this->last_name;
@@ -79,7 +79,7 @@ final class Employee extends Authenticatable
 
         return $employee;
     }
-    
+
     public function role() : object
     {
         return $this->belongsTo(Role::class, 'role_id');

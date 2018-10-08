@@ -16,7 +16,7 @@ use MnkyDevTeam\Admin\Http\Resources\Employee\Employee as EmployeeResource;
 final class EmployeeListingController extends Controller
 {
     use DataTableTrait;
-    
+
     public function listing() : Collection
     {
         $employeeCollection = Collection::make(new EmployeeCollection(new EmployeeResource(

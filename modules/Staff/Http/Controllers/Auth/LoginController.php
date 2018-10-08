@@ -2,25 +2,25 @@
 
 declare(strict_types=1);
 
-namespace MnkyDevTeam\Counselor\Http\Controllers\Auth;
+namespace MnkyDevTeam\Staff\Http\Controllers\Auth;
 
 use App\Entities\Employee\Employee;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
-use MnkyDevTeam\Counselor\Http\Requests\CounselorLoginRequest;
+use MnkyDevTeam\Staff\Http\Requests\StaffLoginRequest;
 
 final class LoginController extends Controller
 {
-    public function __invoke(CounselorLoginRequest $request)
+    public function __invoke(StaffLoginRequest $request)
     {
-        if (Auth::guard('counselor')->attempt(['username' => $request->username, 'password' => $request->password])) {
+        if (Auth::guard('staff')->attempt(['username' => $request->username, 'password' => $request->password])) {
             $employee = Employee::where('username', $request->username)->first();
 
-            if ($employee->is_authorize) {
-                return redirect()->intended(route('counselor.user.dashboard'));
+            if (!$employee->is_authorize) {
+                return redirect()->intended(route('staff.user.dashboard'));
             }
 
-            return redirect()->intended(route('counselor.login'));
+            return redirect()->intended(route('staff.login'));
         }
 
         return redirect()
@@ -29,3 +29,4 @@ final class LoginController extends Controller
             ->withErrors('These credentials do not match our records.');
     }
 }
+

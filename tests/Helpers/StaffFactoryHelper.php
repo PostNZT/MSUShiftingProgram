@@ -8,7 +8,7 @@ use App\Entities\Employee\Role;
 use App\Entities\Employee\Employee;
 use Illuminate\Support\Facades\Hash;
 
-trait CounselorFactoryHelper
+trait StaffFactoryHelper
 {
     public function fakeUserWithAuth(
         string $username = 'username',
@@ -17,11 +17,11 @@ trait CounselorFactoryHelper
         return \factory(Employee::class)->create([
             'username'  => $username,
             'password'  => Hash::make($password),
-            'is_authorize' => true
+            'is_authorize' => false
         ]);
     }
 
-    public function fakeCounselor(
+    public function fakeStaff(
         string $firstName = "Jhune Carlo",
         string $lastName = "Trogelio",
         string $middleName = "B",

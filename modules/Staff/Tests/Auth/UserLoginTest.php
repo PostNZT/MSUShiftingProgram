@@ -2,23 +2,23 @@
 
 declare(strict_types=1);
 
-namespace MnkyDevTeam\Counselor\Tests\Auth;
+namespace MnkyDevTeam\Staff\Tests\Auth;
 
 use Tests\TestCase;
-use Tests\Helpers\CounselorFactoryHelper;
+use Tests\Helpers\StaffFactoryHelper;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 final class UserLoginTest extends TestCase
 {
     use RefreshDatabase;
-    use CounselorFactoryHelper;
+    use StaffFactoryHelper;
 
     /**
      * @test
      */
     public function shouldRedirectToLoginPageIfUserIsNotYetAuthenticated() : void
     {
-        $this->get(\route('counselor.home'))->assertRedirect(\route('counselor.login'));
+        $this->get(\route('staff.home'))->assertRedirect(\route('staff.login'));
     }
 
     /**
@@ -27,8 +27,8 @@ final class UserLoginTest extends TestCase
     public function shouldRedirectProfilePageOnceAuthenticated() : void
     {
         $this->fakeUserWithAuth('jtrogelio', 'jtrogelio');
-        $this->post(\route('counselor.login.submit'), ['username' => 'jtrogelio', 'password' => 'jtrogelio'])
-            ->assertRedirect(\route('counselor.user.dashboard'));
+        $this->post(\route('staff.login.submit'), ['username' => 'jtrogelio', 'password' => 'jtrogelio'])
+            ->assertRedirect(\route('staff.user.dashboard'));
     }
 
      /**
@@ -36,7 +36,7 @@ final class UserLoginTest extends TestCase
      */
     public function shouldSeeErrorMessageIfFailedToAuthenticateUser() : void
     {
-        $this->post(\route('counselor.login.submit'), ['username' => 'unknown', 'password' => 'invalid-password'])
+        $this->post(\route('staff.login.submit'), ['username' => 'unknown', 'password' => 'invalid-password'])
             ->assertSessionHasErrors();
     }
 }

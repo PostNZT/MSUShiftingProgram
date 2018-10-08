@@ -11,16 +11,21 @@ use Illuminate\Support\Facades\Hash;
 
 trait AdminFactoryHelper
 {
-    public function fakeUserWithAuth(string $username = 'username', string $password = 'password') : User
-    {
+    public function fakeUserWithAuth(
+        string $username = 'username',
+        string $password = 'password'
+    ) : User {
         return \factory(User::class)->create([
             'username'  => $username,
             'password'  => Hash::make($password),
         ]);
     }
 
-    public function fakeAdmin(string $firstName = "Jhune Carlo", string $lastName = "Trogelio", string $middleName = "B") : User
-    {
+    public function fakeAdmin(
+        string $firstName = "Jhune Carlo",
+        string $lastName = "Trogelio",
+        string $middleName = "B"
+    ) : User {
         return \factory(User::class)->create([
             'first_name'    => $firstName,
             'middle_name'   => $middleName,
@@ -61,7 +66,7 @@ trait AdminFactoryHelper
         string $username = 'jtrogelio',
         string $password = '$2y$10$s9Z2YbWwdRRyK6hW5lrxN.PXYj94yZlLRdJ6Jz8pAXkaI/sHc4K9.'
     ) : Employee {
-        $role = $this->fakeRole(); 
+        $role = $this->fakeRole();
         return \factory(Employee::class)->create([
             'first_name'        => $firstName,
             'middle_name'       => $middleName,

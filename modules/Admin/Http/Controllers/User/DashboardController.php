@@ -5,8 +5,6 @@ declare(strict_types=1);
 namespace MnkyDevTeam\Admin\Http\Controllers\User;
 
 use Illuminate\View\View;
-use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
 

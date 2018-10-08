@@ -10,7 +10,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 
 final class UserLogoutTest extends TestCase
 {
-   	use RefreshDatabase;
+    use RefreshDatabase;
     use CounselorFactoryHelper;
 
     /**

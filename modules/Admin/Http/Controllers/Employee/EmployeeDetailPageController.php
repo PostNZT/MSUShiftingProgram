@@ -13,7 +13,7 @@ final class EmployeeDetailPageController extends Controller
 {
     public function __invoke(Employee $employee) : View
     {
-    	$roles = Role::all();
+        $roles = Role::all();
         return \view('admin::employee.details', \compact('employee', 'roles'));
     }
 }

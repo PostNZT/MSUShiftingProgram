@@ -7,7 +7,7 @@ Route::group(
         'namespace' => 'MnkyDevTeam\Counselor\Http\Controllers'
     ],
     function () {
-         Route::group(['middleware' => 'guest', 'namespace' => "Auth"], function () {
+        Route::group(['middleware' => 'guest', 'namespace' => "Auth"], function () {
             Route::view('login', 'counselor::login')->name('counselor.login');
             Route::post('login', "LoginController")->name('counselor.login.submit');
         });

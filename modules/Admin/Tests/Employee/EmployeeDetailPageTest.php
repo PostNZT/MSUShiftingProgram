@@ -18,10 +18,10 @@ final class EmployeeDetailPageTest extends TestCase
      */
     public function shouldDisplayDetailPageOfEmployee() : void
     {
-    	$employee =  $this->fakeEmployee();
+        $employee = $this->fakeEmployee();
 
-    	$this->actingAs($this->fakeAdmin(), 'admin')
-    		->get(\route('admin.employee.details', \compact('employee')))
-    		->assertStatus(200);
+        $this->actingAs($this->fakeAdmin(), 'admin')
+            ->get(\route('admin.employee.details', \compact('employee')))
+            ->assertStatus(200);
     }
 }

@@ -60,8 +60,8 @@ final class EmployeeEnlistmentTest extends TestCase
 
         $response = $this->actingAs($this->fakeAdmin(), 'admin')
             ->post(\route('admin.employee.enlist'), $employee);
-        
-        $employee =Employee::where([
+
+        $employee = Employee::where([
             "first_name" => "Jhune Carlo",
             "middle_name" => "B",
             "last_name" => "Trogelio"

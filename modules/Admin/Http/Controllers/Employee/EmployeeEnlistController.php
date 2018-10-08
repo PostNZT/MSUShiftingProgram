@@ -20,7 +20,7 @@ final class EmployeeEnlistController extends Controller
         } else {
             $employee = Employee::enlistEmployeeAsStaff($this->filterInitialEmployeeInfo($data));
         }
-            
+
         // dd(route('admin.employee.details', \compact('employee')));
         return \redirect(\route('admin.employee.details', \compact('employee')));
     }
