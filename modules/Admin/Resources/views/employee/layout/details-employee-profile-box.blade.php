@@ -1,7 +1,7 @@
 <div style="text-align: center;">
    <div class="servicetitle">
       <div class="profile-pic">
-        <p><img src="{{asset('img/ui-sam.jpg')}}" class="img-circle"></p>
+        <p><img class="img-circle" src={{$employee->picture()}}></p>
       </div>
       <h4>{{$employee->fullName}}</h4>
       <h5>{{$employee->role->name}}</h5>

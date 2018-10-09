@@ -9,7 +9,7 @@ use Illuminate\Routing\Controller;
 use App\Entities\Employee\Employee;
 use App\Entities\Employee\Role;
 
-final class EmployeeDetailPageController extends Controller
+final class EmployeeDetailsPageController extends Controller
 {
     public function __invoke(Employee $employee) : View
     {

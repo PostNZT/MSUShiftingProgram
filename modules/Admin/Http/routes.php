@@ -25,7 +25,11 @@ Route::group(
         Route::group(['middleware' => 'auth:admin', 'prefix' => 'employee', 'namespace' => 'Employee'], function () {
             Route::get('/', 'EmployeePageController')->name('admin.employee');
             Route::post('/', 'EmployeeEnlistController')->name('admin.employee.enlist');
-            Route::get('{employee}/details', 'EmployeeDetailPageController')->name('admin.employee.details');
+            Route::get('{employee}/details', 'EmployeeDetailsPageController')->name('admin.employee.details');
+            // Route::patch('{employee}/details/update', 'EmployeeDetailsUpdateInfoController')
+            //     ->name('admin.employee.details.update-info');
+            // Route::patch('{employee}/details/reset-password', 'EmployeeDetailResetPasswordController')
+            //     ->name('admin.employee.details.reset-password');
 
             Route::group(['prefix' => 'listing/api', 'namespace' => 'Api'], function () {
                 Route::get('/', 'EmployeeListingController@listing')

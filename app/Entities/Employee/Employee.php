@@ -84,4 +84,9 @@ final class Employee extends Authenticatable
     {
         return $this->belongsTo(Role::class, 'role_id');
     }
+
+    public function picture() : string
+    {
+        return $this->picture ? asset('storage/avatars/'.$this->picture) : asset('img/user.jpg');
+    }
 }

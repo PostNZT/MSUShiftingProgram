@@ -8,7 +8,7 @@ use Tests\TestCase;
 use Tests\Helpers\AdminFactoryHelper;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-final class EmployeeDetailPageTest extends TestCase
+final class EmployeeDetailsPageTest extends TestCase
 {
     use RefreshDatabase;
     use AdminFactoryHelper;

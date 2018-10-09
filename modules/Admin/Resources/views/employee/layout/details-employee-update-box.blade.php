@@ -15,11 +15,13 @@
       <div class="row detailed">
        <div class="col-lg-8 col-lg-offset-2 detailed">
           <h4 class="mb">Personal Information</h4>
-          <form role="form" class="form-horizontal">
+          <form role="form" class="form-horizontal" method="POST" action="">
+            {{ csrf_field() }}
+            {{ method_field('PATCH') }}
             <div class="form-group">
               <label class="col-lg-2 control-label"> Avatar</label>
               <div class="col-lg-6">
-                <input type="file" id="exampleInputFile" class="file-pos">
+                <input type="file" id="exampleInputFile" class="file-pos" name="imageFile">
               </div>
             </div>
              <div>
