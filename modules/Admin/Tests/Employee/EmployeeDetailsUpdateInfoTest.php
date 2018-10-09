@@ -18,6 +18,6 @@ final class EmployeeDetailsUpdateInfoTest extends TestCase
      */
     public function shouldUpdateEmployeeInfo() : void
     {
-    	$this->assertTrue(true);
+        $this->assertTrue(true);
     }
 }

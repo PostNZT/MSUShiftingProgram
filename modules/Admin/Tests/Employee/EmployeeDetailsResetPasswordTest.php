@@ -10,14 +10,14 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 
 final class EmployeeDetailsResetPasswordTest extends TestCase
 {
-	use RefreshDatabase;
-	use AdminFactoryHelper;
+    use RefreshDatabase;
+    use AdminFactoryHelper;
 
-	/**
-	 * @test
-	 */
-	public function shouldResetPasswordOfEmployeeUsingAdminAccount() : void
-	{
-		$this->assertTrue(true);
-	}
+    /**
+     * @test
+     */
+    public function shouldResetPasswordOfEmployeeUsingAdminAccount() : void
+    {
+        $this->assertTrue(true);
+    }
 }

@@ -10,10 +10,10 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 
 final class UserLogoutTest extends TestCase
 {
-	use RefreshDatabase;
-	use StaffFactoryHelper;
+    use RefreshDatabase;
+    use StaffFactoryHelper;
 
-   	/**
+    /**
      * @test
      */
     public function shouldRedirectToLoginPageUponLogout() : void

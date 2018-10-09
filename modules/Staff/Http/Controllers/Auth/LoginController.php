@@ -16,7 +16,7 @@ final class LoginController extends Controller
         if (Auth::guard('staff')->attempt(['username' => $request->username, 'password' => $request->password])) {
             $employee = Employee::where('username', $request->username)->first();
 
-            if (!$employee->is_authorize) {
+            if (! $employee->is_authorize) {
                 return redirect()->intended(route('staff.user.dashboard'));
             }
 
@@ -29,4 +29,3 @@ final class LoginController extends Controller
             ->withErrors('These credentials do not match our records.');
     }
 }
-
