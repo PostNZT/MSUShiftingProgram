@@ -19,7 +19,7 @@ final class EmployeeDetailsResetPasswordController extends Controller
         $admin = Auth::guard('admin')->user();
   
         if (Hash::check($data['password'], $admin->password)) {
-  
+            
             $employee->password = \bcrypt($employee->username);
             $employee->save();
         
@@ -28,6 +28,6 @@ final class EmployeeDetailsResetPasswordController extends Controller
         }
 
         return \redirect(\route('admin.employee.details', \compact('employee')))
-        		->with('Incorrect Password', 'default');
+        		->with('message', 'Incorrect Password');
     } 
 }

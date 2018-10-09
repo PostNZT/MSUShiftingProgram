@@ -67,10 +67,19 @@
       <div class="row detailed">
         <div class="col-lg-8 col-lg-offset-2 detailed">
         <h4 class="mb">Password Reset:</h4>
-        <form role="form" class="form-horizontal" method="POST" action="">
+        <form role="form" class="form-horizontal" method="POST" action="{{\route('admin.employee.details.reset-password', $employee)}}">
           {{ csrf_field() }}
           {{ method_field('PATCH') }}
-          <div>
+          @if ($errors->any())
+              <div class="alert alert-danger text-xs">
+                  <ul>
+                      @foreach ($errors->all() as $error)
+                          <li class="text-sm">{{ $error }}</li>
+                      @endforeach
+                  </ul>
+              </div>
+          @endif
+          <div class="form-group {{$errors->has('password') ? "has-error":''}}"
             <span class="help-block"> Reset Password:</span>
             <input class="form-control" type="text" placeholder="" name="password" value="">
           </div>
