@@ -67,10 +67,12 @@
       <div class="row detailed">
         <div class="col-lg-8 col-lg-offset-2 detailed">
         <h4 class="mb">Password Reset:</h4>
-        <form role="form" class="form-horizontal">
+        <form role="form" class="form-horizontal" method="POST" action="">
+          {{ csrf_field() }}
+          {{ method_field('PATCH') }}
           <div>
             <span class="help-block"> Reset Password:</span>
-            <input class="form-control" type="text" placeholder="" name="first_name" value="">
+            <input class="form-control" type="text" placeholder="" name="password" value="">
           </div>
           <br>
           <div style="text-align: center;">

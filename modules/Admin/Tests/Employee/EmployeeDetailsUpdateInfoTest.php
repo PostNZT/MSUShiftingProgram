@@ -18,6 +18,15 @@ final class EmployeeDetailsUpdateInfoTest extends TestCase
      */
     public function shouldUpdateEmployeeInfo() : void
     {
-        $this->assertTrue(true);
+    	// $employee = $this->fakeEmployee();
+
+    	// payload = [
+    	// 	'picture'			=> '',
+    	// 	'first_name'		=> 'John',
+    	// 	'middle_name'		=> 'A.'
+    	// 	'last_name'			=> 
+    	// ];
+
+    	$this->assertTrue(true);
     }
 }

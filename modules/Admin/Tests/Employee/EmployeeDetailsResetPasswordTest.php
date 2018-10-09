@@ -18,6 +18,17 @@ final class EmployeeDetailsResetPasswordTest extends TestCase
      */
     public function shouldResetPasswordOfEmployeeUsingAdminAccount() : void
     {
-        $this->assertTrue(true);
+        $employee = $this->fakeEmployee();
+
+        $payload = [
+        	'password' => 'msu.admin'
+        ];
+
+		// dd($employee, $payload);
+        $this->actingAs($this->fakeAdmin(), 'admin')
+        	->patch(\route('admin.employee.details.reset-password', $employee), $payload)
+        	->assertRedirect(\route('admin.employee.details', \compact('employee')))
+            ->assertStatus(302);
+
     }
 }

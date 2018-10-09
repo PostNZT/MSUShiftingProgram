@@ -28,8 +28,8 @@ Route::group(
             Route::get('{employee}/details', 'EmployeeDetailsPageController')->name('admin.employee.details');
             // Route::patch('{employee}/details/update', 'EmployeeDetailsUpdateInfoController')
             //     ->name('admin.employee.details.update-info');
-            // Route::patch('{employee}/details/reset-password', 'EmployeeDetailResetPasswordController')
-            //     ->name('admin.employee.details.reset-password');
+            Route::patch('{employee}/details/reset-password', 'EmployeeDetailsResetPasswordController')
+                ->name('admin.employee.details.reset-password');
 
             Route::group(['prefix' => 'listing/api', 'namespace' => 'Api'], function () {
                 Route::get('/', 'EmployeeListingController@listing')
