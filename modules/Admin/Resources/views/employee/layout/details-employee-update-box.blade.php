@@ -18,6 +18,15 @@
           <form role="form" class="form-horizontal" method="POST" action="">
             {{ csrf_field() }}
             {{ method_field('PATCH') }}
+            @if ($errors->any())
+                <div class="alert alert-danger text-xs">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li class="text-sm">{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
             <div class="form-group">
               <label class="col-lg-2 control-label"> Avatar</label>
               <div class="col-lg-6">

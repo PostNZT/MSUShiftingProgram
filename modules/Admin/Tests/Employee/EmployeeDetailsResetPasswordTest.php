@@ -24,7 +24,6 @@ final class EmployeeDetailsResetPasswordTest extends TestCase
         	'password' => 'msu.admin'
         ];
 
-		// dd($employee, $payload);
         $this->actingAs($this->fakeAdmin(), 'admin')
         	->patch(\route('admin.employee.details.reset-password', $employee), $payload)
         	->assertRedirect(\route('admin.employee.details', \compact('employee')))
