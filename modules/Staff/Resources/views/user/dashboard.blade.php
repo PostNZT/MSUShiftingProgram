@@ -54,7 +54,7 @@
       <span>Students</span>
       </a>
     <ul class="sub">
-      <li><a href="">General Student Data</a></li>
+      <li><a href="{{\route('staff.student.general')}}">General Student Data</a></li>
       <li><a href="{{\route('staff.student.upload')}}">Upload Student Data</a></li>
     </ul>
   </li>
