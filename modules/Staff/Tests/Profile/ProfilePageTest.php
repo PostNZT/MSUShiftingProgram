@@ -10,17 +10,17 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 
 final class ProfilePageTest extends TestCase
 {
-	use RefreshDatabase;
-	use StaffFactoryHelper;
+    use RefreshDatabase;
+    use StaffFactoryHelper;
 
-	/**
-	 * @test
-	 * @return void
-	 */
-	public function shouldDisplayProfilePageSuccessfully() : void
-	{
-		$this->actingAs($this->fakeStaff(), 'staff')
-			->get(\route('staff.profile'))
-			->assertStatus(200);
-	}
+    /**
+     * @test
+     * @return void
+     */
+    public function shouldDisplayProfilePageSuccessfully() : void
+    {
+        $this->actingAs($this->fakeStaff(), 'staff')
+            ->get(\route('staff.profile'))
+            ->assertStatus(200);
+    }
 }
