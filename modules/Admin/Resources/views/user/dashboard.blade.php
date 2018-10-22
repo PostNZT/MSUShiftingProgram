@@ -14,7 +14,7 @@
 
 @endsection
 @section('title')
-	MSUOVCAA Dashboard
+	DSA Dashboard
 @endsection
 
 @section('navbar')

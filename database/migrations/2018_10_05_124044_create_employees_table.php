@@ -27,7 +27,7 @@ class CreateEmployeesTable extends Migration
             $table->date('birthdate')->nullable();
             $table->string('employee_id')->nullable();
             $table->boolean('is_authorize')->default(false);
-            $table->rememberToken()->unique();
+            $table->rememberToken();
             $table->unique(['first_name', 'middle_name', 'last_name'], 'employee_name');
             $table->timestamps();
         });

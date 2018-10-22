@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace App\Entities\Employee;
 
+use Ramsey\Uuid\Uuid;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Notifications\Notifiable;
-use Ramsey\Uuid\Uuid;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 final class Employee extends Authenticatable
@@ -64,6 +64,7 @@ final class Employee extends Authenticatable
         $data['password'] = Hash::make($data['username']);
         $data['is_authorize'] = true;
         $data['uuid'] = Uuid::uuid4();
+        $data['remember_token'] = str_random(100);
         $employee = Employee::firstOrCreate($data);
 
         return $employee;
@@ -75,6 +76,7 @@ final class Employee extends Authenticatable
         $data['password'] = Hash::make($data['username']);
         $data['is_authorize'] = false;
         $data['uuid'] = Uuid::uuid4();
+        $data['remember_token'] = str_random(100);
         $employee = Employee::firstOrCreate($data);
 
         return $employee;

@@ -13,6 +13,7 @@ final class EmployeeEnlistController extends Controller
     public function __invoke(EnlistEmployeeRequest $request)
     {
         $data = $request->post();
+
         $roleChecker = $this->filterInitialEmployeeInfo($data);
 
         if ($roleChecker['role_id'] == 1) {

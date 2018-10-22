@@ -52,8 +52,8 @@ return [
     |
     */
 
-    'url'       => env('APP_URL', 'https://msuovcaa.local'),
-    'domain'    => env('APP_DOMAIN', 'msuovcaa.local'),
+    'url'       => env('APP_URL', 'https://dsa.local'),
+    'domain'    => env('APP_DOMAIN', 'dsa.local'),
 
     /*
     |--------------------------------------------------------------------------

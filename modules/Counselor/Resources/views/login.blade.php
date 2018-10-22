@@ -1,6 +1,6 @@
 @extends('index')
 @section('title')
-  MSUOVCAA - COUNSELOR 
+  DSA - COUNSELOR 
 @endsection
 @section('content')
 	<div class="container">

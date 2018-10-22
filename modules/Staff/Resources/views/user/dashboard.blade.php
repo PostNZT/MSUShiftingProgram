@@ -14,7 +14,7 @@
 
 @endsection
 @section('title')
-	MSUOVCAA Dashboard
+	DSA Dashboard
 @endsection
 
 @section('navbar')
@@ -39,18 +39,12 @@
 
 @section('sidebar')
 <ul class="sidebar-menu" id="nav-accordion">
-  <p class="centered"><a href="profile.html"><img src="{{asset('img/msu.png')}}" class="img-circle"  height= "80" width="80"></a></p>
   <h5 class="centered">MSU-MAIN STAFF</h5>
+  <p class="centered"><a href="profile.html"><img src="{{asset('img/msu.png')}}" class="img-circle"  height= "80" width="80"></a></p>
   <li class="mt">
     <a class="active" href="{{\route('staff.user.dashboard')}}">
       <i class="fa fa-dashboard"></i>
       <span>Dashboard</span>
-    </a>
-  </li>
-  <li>
-    <a href="">
-      <i class="fa fa-group"></i>
-      <span>Employees </span>
     </a>
   </li>
   <li class="sub-menu">
@@ -59,10 +53,8 @@
       <span>Students</span>
       </a>
     <ul class="sub">
-      <li><a href="">General</a></li>
-      <li><a href="">Buttons</a></li>
-      <li><a href="">Panels</a></li>
-      <li><a href="">Font Awesome</a></li>
+      <li><a href="">General Student Data</a></li>
+      <li><a href="">Upload Student Data</a></li>
     </ul>
   </li>
 </ul>

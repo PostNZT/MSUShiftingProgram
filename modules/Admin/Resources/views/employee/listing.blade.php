@@ -14,7 +14,7 @@
   <script type="text/javascript" src="{{asset('js/jquery-3.3.1.min.js')}}" ></script>
 @endsection
 @section('title')
-	MSUOVCAA - Employee Listing
+	DSA - Employee Listing
 @endsection
 
 @section('navbar')

@@ -15,7 +15,7 @@
       <div class="row detailed">
        <div class="col-lg-8 col-lg-offset-2 detailed">
           <h4 class="mb">Personal Information</h4>
-          <form role="form" class="form-horizontal" method="POST" action="">
+          <form role="form" class="form-horizontal" enctype="multipart/form-data" method="POST" action="{{\route('admin.employee.details.update-info', $employee)}}">
             {{ csrf_field() }}
             {{ method_field('PATCH') }}
             @if ($errors->any())
@@ -28,25 +28,27 @@
                 </div>
             @endif
             <div class="form-group">
-              <label class="col-lg-2 control-label"> Avatar</label>
+              <label class="col-lg-4 control-label"> Avatar:</label>
               <div class="col-lg-6">
-                <input type="file" id="exampleInputFile" class="file-pos" name="imageFile">
+                <input type="file" class="file-control"  name="picture">
               </div>
             </div>
+            <br>
              <div>
-                <input class="form-control" type="text" placeholder="{{$employee->first_name}}" name="first_name" value="">
+                <span class="help-block">First Name:</span>
+                <input class="form-control" type="text" placeholder="" name="first_name" value="{{$employee->first_name}}">
               </div>
-              <br>
               <div>
-                <input class="form-control" type="text" placeholder="{{$employee->middle_name}}" name="middle_name" value="">
+                <span class="help-block">Middle Name:</span>
+                <input class="form-control" type="text" placeholder="" name="middle_name" value="{{$employee->middle_name}}">
               </div>
-              <br>
               <div>
-                <input class="form-control" type="text" placeholder="{{$employee->last_name}}" name="last_name" value="">
+                <span class="help-block">Last Name:</span>
+                <input class="form-control" type="text" placeholder="" name="last_name" value="{{$employee->last_name}}">
               </div>
-              <br>
               <div>
-                <input class="form-control" type="text" placeholder="{{$employee->employee_id}}" name="employee_id" value="">
+                <span class="help-block">Employee ID:</span>
+                <input class="form-control" type="text" placeholder="" name="employee_id" value="{{$employee->employee_id}}">
               </div>
               <div>
                 <span class="help-block">Birthdate:</span>
@@ -55,7 +57,7 @@
               <div>  
                 <span class="help-block"> Role:</span>
                 <select class="form-control" name="role_id">
-                  <option value="" disabled {{empty(\old('role_id')) ? "selected" : ""}}>Select Role</option>
+                  <option value="" disabled {{empty(\old('role_id')) ? "selected" : ""}}>{{$employee->role->name}}</option>
                   @if ($roles->isNotEmpty())
                       @foreach ($roles as $role)
                           <option value="{{$role->id}}" {{!empty(\old('role_id')) ? (\old('role_id') == $role->id ? "selected" : "") : ""}}>{{$role->name}}</option>

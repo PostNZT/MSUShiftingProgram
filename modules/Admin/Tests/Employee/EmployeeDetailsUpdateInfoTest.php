@@ -20,13 +20,21 @@ final class EmployeeDetailsUpdateInfoTest extends TestCase
     {
     	// $employee = $this->fakeEmployee();
 
-    	// payload = [
-    	// 	'picture'			=> '',
+    	// $payload = [
+    	// 	'picture'			=> 'image.png',
     	// 	'first_name'		=> 'John',
-    	// 	'middle_name'		=> 'A.'
-    	// 	'last_name'			=> 
+    	// 	'middle_name'		=> 'A',
+    	// 	'last_name'			=> 'Trogelio',
+    	// 	'employee_id'		=> '2015-8338',
+     //        'birthdate'         => '2018-10-07',
+     //        'role_id'           => 2
     	// ];
 
-    	$this->assertTrue(true);
+    	// $this->actingAs($this->fakeAdmin(), 'admin')
+    	// 	->patch(\route('admin.employee.details.update-info', $employee), $payload)
+    	// 	->assertRedirect(\route('admin.employee.details', \compact('employee')))
+     //        ->assertStatus(302);
+
+        $this->assertTrue(true);
     }
 }

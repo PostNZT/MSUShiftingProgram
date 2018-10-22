@@ -17,7 +17,7 @@
         crossorigin="anonymous"></script>
 @endsection
 @section('title')
-	MSUOVCAA - Employee Listing
+	DSA - Employee Listing
 @endsection
 
 @section('navbar')
