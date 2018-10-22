@@ -12,19 +12,18 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\File;
 
- 
 final class EmployeeDetailsUpdateInfoController extends Controller
 {
     public function __invoke(Employee $employee, Request $request)
     {
-    	$data = $request->post();
-    	//need to add picture upload
+        $data = $request->post();
+        //need to add picture upload
         dd($data['first_name']);
 
 
   //       $employee = new file;
-	
-		// $employee->first_name 		= Input::get('first_name');
+
+        // $employee->first_name 		= Input::get('first_name');
   //       $employee->middle_name      = Input::get('middle_name');
   //       $employee->last_name        = Input::get('last_name');
   //       $employee->employee_id      = Input::get('employee_id');
@@ -38,10 +37,10 @@ final class EmployeeDetailsUpdateInfoController extends Controller
   //       	$employee->picture = $picture->getClientOriginalName();
 
   //       }
-         
+
   //       $employee->save();
 
         return \redirect(\route('admin.employee.details', \compact('employee')))
-        		->with('message', 'Successfully Updated Employee Information');
+                ->with('message', 'Successfully Updated Employee Information');
     }
 }

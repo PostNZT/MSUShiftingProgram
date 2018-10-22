@@ -21,13 +21,12 @@ final class EmployeeDetailsResetPasswordTest extends TestCase
         $employee = $this->fakeEmployee();
 
         $payload = [
-        	'password' => 'msu.admin'
+            'password' => 'msu.admin'
         ];
 
         $this->actingAs($this->fakeAdmin(), 'admin')
-        	->patch(\route('admin.employee.details.reset-password', $employee), $payload)
-        	->assertRedirect(\route('admin.employee.details', \compact('employee')))
+            ->patch(\route('admin.employee.details.reset-password', $employee), $payload)
+            ->assertRedirect(\route('admin.employee.details', \compact('employee')))
             ->assertStatus(302);
-
     }
 }

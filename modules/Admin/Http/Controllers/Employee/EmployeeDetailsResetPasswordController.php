@@ -17,17 +17,16 @@ final class EmployeeDetailsResetPasswordController extends Controller
     {
         $data = $request->post();
         $admin = Auth::guard('admin')->user();
-  
+
         if (Hash::check($data['password'], $admin->password)) {
-            
             $employee->password = \bcrypt($employee->username);
             $employee->save();
-        
-        	return \redirect(\route('admin.employee.details', \compact('employee')))
-        		->with('message', 'Successfully Reset Password');
+
+            return \redirect(\route('admin.employee.details', \compact('employee')))
+                ->with('message', 'Successfully Reset Password');
         }
 
         return \redirect(\route('admin.employee.details', \compact('employee')))
-        		->with('message', 'Incorrect Password');
-    } 
+                ->with('message', 'Incorrect Password');
+    }
 }
