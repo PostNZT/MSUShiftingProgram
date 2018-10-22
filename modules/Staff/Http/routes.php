@@ -31,5 +31,9 @@ Route::group(
                 Route::get('/', "UploadStudentDataController")->name('staff.student.upload');
             });
         });
+
+        Route::group(['middleware' => 'auth:staff', 'prefix' => 'profile', 'namespace' => 'Profile'], function () {
+            Route::get('/', 'ProfilePageController')->name('staff.profile');
+        });
     }
 );
