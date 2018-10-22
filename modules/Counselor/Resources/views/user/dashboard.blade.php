@@ -39,8 +39,9 @@
 
 @section('sidebar')
 <ul class="sidebar-menu" id="nav-accordion">
-  <p class="centered"><a href="profile.html"><img src="{{asset('img/msu.png')}}" class="img-circle"  height= "80" width="80"></a></p>
-  <h5 class="centered">MSU-MAIN Counselor</h5>
+  <h5 class="centered">MSU-MAIN COUNSELOR</h5>
+  <p class="centered"><img class="img-circle" class="img-circle"  height= "80" width="80" src="{{$counselor->picture()}}"></p>
+  <h4 class="centered">{{$counselor->fullName}}</h4>  
   <li class="mt">
     <a class="active" href="{{\route('counselor.user.dashboard')}}">
       <i class="fa fa-dashboard"></i>

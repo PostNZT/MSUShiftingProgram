@@ -40,7 +40,8 @@
 @section('sidebar')
 <ul class="sidebar-menu" id="nav-accordion">
   <h5 class="centered">MSU-MAIN STAFF</h5>
-  <p class="centered"><a href="profile.html"><img src="{{asset('img/msu.png')}}" class="img-circle"  height= "80" width="80"></a></p>
+  <p class="centered"><img class="img-circle" class="img-circle"  height= "80" width="80" src="{{$staff->picture()}}"></p>
+  <h4 class="centered">{{$staff->fullName}}</h4>  
   <li class="mt">
     <a class="active" href="{{\route('staff.user.dashboard')}}">
       <i class="fa fa-dashboard"></i>
@@ -54,8 +55,14 @@
       </a>
     <ul class="sub">
       <li><a href="">General Student Data</a></li>
-      <li><a href="">Upload Student Data</a></li>
+      <li><a href="{{\route('staff.student.upload')}}">Upload Student Data</a></li>
     </ul>
+  </li>
+  <li>
+    <a href="">
+      <i class="fa fa-user"></i>
+      <span>Profile</span>
+    </a>
   </li>
 </ul>
 @endsection
