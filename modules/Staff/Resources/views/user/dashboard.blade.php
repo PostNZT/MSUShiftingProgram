@@ -59,7 +59,7 @@
     </ul>
   </li>
   <li>
-    <a href="">
+    <a href="{{\route('staff.profile')}}">
       <i class="fa fa-user"></i>
       <span>Profile</span>
     </a>
