@@ -22,12 +22,12 @@ Route::group(
             Route::post('logout', "Auth\LogoutController")->name('staff.logout');
         });
 
-        Route::group(['middleware' => 'auth:staff', 'prefix' => 'student', 'namespace' => 'Student'], function() {
-            Route::group(['prefix' => 'general', 'namespace' => 'General'], function() {
+        Route::group(['middleware' => 'auth:staff', 'prefix' => 'student', 'namespace' => 'Student'], function () {
+            Route::group(['prefix' => 'general', 'namespace' => 'General'], function () {
                 Route::get('/', "GeneralStudentDataPageController")->name('staff.student.general');
             });
 
-            Route::group(['prefix' => 'upload', 'namespace' => 'Upload'], function() {
+            Route::group(['prefix' => 'upload', 'namespace' => 'Upload'], function () {
                 Route::get('/', "UploadStudentDataController")->name('staff.student.upload');
             });
         });

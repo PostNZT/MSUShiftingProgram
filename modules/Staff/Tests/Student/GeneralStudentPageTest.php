@@ -20,7 +20,7 @@ final class GeneralStudentPageTest extends TestCase
     public function shouldDisplayGeneralStudentPageSuccessfully() : void
     {
         $this->actingAs($this->fakeStaff(), 'staff')
-        	->get(\route('staff.student.general'))
-        	->assertStatus(200);
+            ->get(\route('staff.student.general'))
+            ->assertStatus(200);
     }
 }

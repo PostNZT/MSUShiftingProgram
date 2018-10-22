@@ -20,7 +20,7 @@ final class UploadStudentPageTest extends TestCase
     public function shouldDisplayUploadStudentPageSuccessfully() : void
     {
         $this->actingAs($this->fakeStaff(), 'staff')
-        	->get(\route('staff.student.upload'))
-        	->assertStatus(200);
+            ->get(\route('staff.student.upload'))
+            ->assertStatus(200);
     }
 }
