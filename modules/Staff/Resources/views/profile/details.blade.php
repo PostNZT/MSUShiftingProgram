@@ -49,18 +49,14 @@
       <span>Dashboard</span>
     </a>
   </li>
-  <li class="sub-menu">
-    <a href="javascript:;">
+  <li>
+    <a href="{{\route('staff.student')}}">
       <i class="fa fa-sitemap"></i>
-      <span>Students</span>
-      </a>
-    <ul class="sub">
-      <li><a href="{{\route('staff.student.general')}}">General Student Data</a></li>
-      <li><a href="{{\route('staff.student.upload')}}">Upload Student Data</a></li>
-    </ul>
+      <span>Student Data</span>
+    </a>
   </li>
   <li>
-    <a class="active" href="{{\route('staff.profile')}}">
+    <a class="active" href="">
       <i class="fa fa-user"></i>
       <span>Profile</span>
     </a>

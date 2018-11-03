@@ -23,17 +23,11 @@ Route::group(
         });
 
         Route::group(['middleware' => 'auth:staff', 'prefix' => 'student', 'namespace' => 'Student'], function () {
-            Route::group(['prefix' => 'general', 'namespace' => 'General'], function () {
-                Route::get('/', "GeneralStudentDataPageController")->name('staff.student.general');
-            });
-
-            Route::group(['prefix' => 'upload', 'namespace' => 'Upload'], function () {
-                Route::get('/', "UploadStudentDataController")->name('staff.student.upload');
-            });
+           Route::get('/', 'StudentPageController')->name('staff.student');
         });
 
         Route::group(['middleware' => 'auth:staff', 'prefix' => 'profile', 'namespace' => 'Profile'], function () {
-            Route::get('/', 'ProfilePageController')->name('staff.profile');
+            // Route::get('/', 'ProfilePageController')->name('staff.profile');
         });
     }
 );
