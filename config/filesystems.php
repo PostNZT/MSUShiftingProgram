@@ -60,6 +60,10 @@ return [
             'url' => env('APP_URL').'/avatars',
             'visibility' => 'public',
         ],
+        'student-records' => [
+            'driver' => 'local',
+            'root' => storage_path('files/student-records'),
+        ],
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),

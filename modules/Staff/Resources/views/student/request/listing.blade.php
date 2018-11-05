@@ -42,13 +42,13 @@
   <p class="centered"><a href="profile.html"><img src="{{asset('img/msu.png')}}" class="img-circle"  height= "80" width="80"></a></p>
   <h5 class="centered">MSU-MAIN STAFF</h5>
   <li class="mt">
-    <a class="active" href="{{\route('staff.user.dashboard')}}">
+    <a href="{{\route('staff.user.dashboard')}}">
       <i class="fa fa-dashboard"></i>
       <span>Dashboard</span>
     </a>
   </li>
   <li class="sub-menu">
-    <a href="javascript:;">
+    <a class="active" href="javascript:;">
       <i class="fa fa-sitemap"></i>
       <span>Student</span>
       </a>
@@ -61,7 +61,21 @@
 </ul>
 @endsection
 @section('content')
-prfile
+<div class="row mt">
+  <div class="col-lg-2">
+    
+  </div>
+  <div class="col-lg-8">
+    <section class="panel">
+       <div class="panel-body">
+        <h4 class="mb"><i class="fa fa-angle-right"></i>Request to Shift Program of Study:</h4>
+  
+       </div>
+    </section>
+  </div>
+  <div class="col-lg-2">
+  </div>
+</div>
 @endsection
 
 @section('scripts')

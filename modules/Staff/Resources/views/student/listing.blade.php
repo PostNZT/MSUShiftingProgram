@@ -39,26 +39,24 @@
 
 @section('sidebar')
 <ul class="sidebar-menu" id="nav-accordion">
+  <p class="centered"><a href="profile.html"><img src="{{asset('img/msu.png')}}" class="img-circle"  height= "80" width="80"></a></p>
   <h5 class="centered">MSU-MAIN STAFF</h5>
-  <p class="centered"><img class="img-circle" class="img-circle"  height= "80" width="80" src="{{$staff->picture()}}"></p>
-  <h4 class="centered">{{$staff->fullName}}</h4>
   <li class="mt">
-    <a  href="{{\route('staff.user.dashboard')}}">
+    <a class="active" href="{{\route('staff.user.dashboard')}}">
       <i class="fa fa-dashboard"></i>
       <span>Dashboard</span>
     </a>
   </li>
-  <li>
-    <a class="active" href="{{\route('staff.student')}}">
+  <li class="sub-menu">
+    <a href="javascript:;">
       <i class="fa fa-sitemap"></i>
-      <span>Student Data</span>
-    </a>
-  </li>
-  <li>
-    <a href="">
-      <i class="fa fa-user"></i>
-      <span>Profile</span>
-    </a>
+      <span>Student</span>
+      </a>
+    <ul class="sub">
+      <li><a href="{{\route('staff.student.general')}}">General Overview</a></li>
+      <li><a href="{{\route('staff.student.request')}}">Student Request</a></li>
+      <li><a href="">Upload Student Record</a></li>
+    </ul>
   </li>
 </ul>
 @endsection
@@ -75,26 +73,10 @@
     <section class="panel">
        <div class="panel-body">
         <h4 class="mb"><i class="fa fa-angle-right"></i>Upload Student Record:</h4>
-        <form class="form-horizontal style-form" method="POST" action="">
-          {{ csrf_field() }}
-          @if ($errors->any())
-              <div class="alert alert-danger text-xs">
-                  <ul>
-                      @foreach ($errors->all() as $error)
-                          <li class="text-sm">{{ $error }}</li>
-                      @endforeach
-                  </ul>
-              </div>
-          @endif
-          <div class="form-group">
-            <div class="col-sm-12">
-
-            </div>
-          </div>
-          <div style="text-align: right;">
-             <button type="submit" class="btn btn-theme03 "><i class="fa fa-check"></i> Submit</button>
-          </div>
-        </form>
+        @include('staff::student.layouts.import-file')
+        <hr>
+        <h4 class="mb"><i class="fa fa-angle-right"></i>Student Batch Files:</h4>
+        @include('staff::student.layouts.batch-datatables')
        </div>
     </section>
 
