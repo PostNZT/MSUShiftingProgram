@@ -2,12 +2,10 @@
 
 declare(strict_types=1);
 
-namespace MnkyDevTeam\Staff\Tests\Student;
+namespace MnkyDevTeam\Staff\Tests\Student\Upload;
 
 use Tests\TestCase;
-use Illuminate\Http\UploadedFile;
 use Tests\Helpers\StaffFactoryHelper;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 final class UploadStudentDataTest extends TestCase
@@ -16,8 +14,8 @@ final class UploadStudentDataTest extends TestCase
     use StaffFactoryHelper;
 
     /**
-     * @test
-     */
+    *@test
+    */
     public function shouldUploadCSVFileSuccessfully() : void
     {
         $this->markTestIncomplete('Changes in the process in the staff!');

@@ -36,4 +36,27 @@ trait StaffFactoryHelper
             'password'      => $password
         ]);
     }
+
+    // public function generateDummyStudentRequest(
+    //       string $firstName             => 'Jhune Carlo',
+    //       string $middleName              => 'B',
+    //       string $last_name             => 'Trogelio',
+    //       integer $student_id           => '2018-8338',
+    //       integer $gender               => 1,
+    //       integer $age                  => 23,
+    //       string $civil_status          => 2,
+    //       integer $old_course_id        => 1,
+    //       integer $old_college_id       => 1,
+    //       integer $new_course_id        => 1,
+    //       integer $new_college_id       => 1,
+    //       integer $year_level           => 2,
+    //       string $contact_no            => '09123456789',
+    //       string $campus_address        => 'MSU-Marawi City',
+    //       string $guardian_name         => 'Roger T. Echo',
+    //       string $guardian_address      => 'Okinawa, Japan',
+    //       string $guardian_number       => '09123456789',
+    //       string $guardian_relationship => 'father',
+    //       integer $number_times_shifted => 1
+    //   ) : array []
+
 }

@@ -26,13 +26,11 @@ class RoleDatabaseSeeder extends Seeder
     	return [
     		[
     			'name'				=> 'Counselor',
-	    		'slug'				=> 'counselor',
-	    		'is_authorize'		=> true
+	    		'slug'				=> 'counselor'
     		],
     		[
     			'name'				=> 'Staff',
-	    		'slug'				=> 'staff',
-	    		'is_authorize'		=> false	
+	    		'slug'				=> 'staff'
     		]
     	];
     }

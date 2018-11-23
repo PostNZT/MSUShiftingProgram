@@ -24,8 +24,6 @@ Route::group(
 
         Route::group(['middleware' => 'auth:staff', 'prefix' => 'student', 'namespace' => 'Student'], function () {
             Route::get('/', 'StudentPageController')->name('staff.student');
-            Route::post('/upload-record', 'UploadStudentDataController')
-                ->name('staff.student.upload-record');
 
             Route::group(['prefix' => 'general', 'namespace' => 'General'], function () {
                 Route::get('/', 'StudentOverviewPageController')->name('staff.student.general');
@@ -33,6 +31,12 @@ Route::group(
 
             Route::group(['prefix' => 'request', 'namespace' => 'Request'], function() {
                 Route::get('/', 'StudentRequestPageController')->name('staff.student.request');
+                Route::post('/enlist', 'StudentRequestDataController')
+                    ->name('staff.student.request.enlist');
+            });
+
+            Route::group(['prefix' => 'upload', 'namespace' => 'Upload'], function() {
+                Route::get('/', 'UploadStudentPageController')->name('staff.student.upload');
             });
         });
 

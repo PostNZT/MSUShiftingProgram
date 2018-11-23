@@ -1,6 +1,6 @@
 @extends('layout.master')
 @section('header')
-  
+
   <!-- Bootstrap core CSS -->
   <link href="{{asset('lib/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
   <!--external css-->
@@ -22,7 +22,7 @@
     <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
   </div>
   <!--logo start-->
-  <a href="{{\route('staff.user.dashboard')}}" class="logo"><b><span>MSU</span>Shifting Program</b></a>
+  <a href="{{\route('staff.user.dashboard')}}" class="logo"><b><span>MSU</span>SP</b></a>
   <!--logo end-->
 
   <div class="top-menu">
@@ -55,7 +55,8 @@
     <ul class="sub">
       <li><a href="{{\route('staff.student.general')}}">General Overview</a></li>
       <li><a href="{{\route('staff.student.request')}}">Student Request</a></li>
-      <li><a href="">Upload Student Record</a></li>
+      <li><a href="{{\route('staff.student.upload')}}">Upload Student Record</a></li>
+      <li><a href="">Student List</a></li>
     </ul>
   </li>
 </ul>

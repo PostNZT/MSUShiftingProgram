@@ -25,7 +25,7 @@
     <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
   </div>
   <!--logo start-->
-  <a href="{{\route('admin.user.dashboard')}}" class="logo"><b><span>MSU</span>Shifting Program</b></a>
+  <a href="{{\route('admin.user.dashboard')}}" class="logo"><b><span>MSU</span>SP</b></a>
   <!--logo end-->
 
   <div class="top-menu">
