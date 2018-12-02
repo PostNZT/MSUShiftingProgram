@@ -5,8 +5,6 @@ declare(strict_types=1);
 namespace MnkyDevTeam\Admin\Http\Controllers\Employee;
 
 use Illuminate\View\View;
-use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 use App\Entities\Employee\Role;
 use Illuminate\Routing\Controller;
 

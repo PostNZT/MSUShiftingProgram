@@ -20,9 +20,9 @@ class CreateStudentsTable extends Migration
             $table->string('last_name');
             $table->integer('student_id');
             $table->uuid('uuid')->unique();
-            $table->string('gender');
+            $table->string('gender_id');
             $table->integer('age');
-            $table->string('civil_status');
+            $table->string('civil_status_id');
             $table->integer('old_college_id');
             $table->integer('old_course_id');
             $table->integer('new_college_id');
@@ -35,6 +35,7 @@ class CreateStudentsTable extends Migration
             $table->string('guardian_number');
             $table->string('guardian_relationship');
             $table->integer('number_times_shifted');
+            $table->string('picture')->nullable();
             $table->unique(['first_name', 'middle_name', 'last_name'], 'student_name');
             $table->timestamps();
         });
