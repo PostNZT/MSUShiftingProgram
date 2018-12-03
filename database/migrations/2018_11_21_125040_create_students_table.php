@@ -18,7 +18,7 @@ class CreateStudentsTable extends Migration
             $table->string('first_name');
             $table->string('middle_name');
             $table->string('last_name');
-            $table->integer('student_id');
+            $table->string('student_id');
             $table->uuid('uuid')->unique();
             $table->string('gender_id');
             $table->integer('age');
@@ -36,6 +36,7 @@ class CreateStudentsTable extends Migration
             $table->string('guardian_relationship');
             $table->integer('number_times_shifted');
             $table->string('picture')->nullable();
+            $table->boolean('shifting_status')->default('false');
             $table->unique(['first_name', 'middle_name', 'last_name'], 'student_name');
             $table->timestamps();
         });

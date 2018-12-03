@@ -17,6 +17,7 @@ class Student extends Model
     public static function enlistStudentRequest(array $data) : self
     {
         $data['uuid'] = Uuid::uuid4();
+        $data['shifting_status'] =  false;
         $student = Student::firstOrCreate($data);
 
         return $student;
@@ -26,7 +27,7 @@ class Student extends Model
     {
         return $this->first_name . " " . $this->last_name;
     }
-    
+
     public function getRouteKeyName() : string
     {
         return 'uuid';
