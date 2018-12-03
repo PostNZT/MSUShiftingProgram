@@ -12,6 +12,7 @@ class StudentRequestDetailsPageController extends Controller
 {
     public function __invoke(Student $student) : View
     {
-        return \view('staff.student.request.details', \compact('student'));
+        
+        return \view('staff::student.request.details', \compact('student'));
     }
 }

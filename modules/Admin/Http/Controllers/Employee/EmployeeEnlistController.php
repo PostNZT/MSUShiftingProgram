@@ -6,11 +6,12 @@ namespace MnkyDevTeam\Admin\Http\Controllers\Employee;
 
 use Illuminate\Routing\Controller;
 use App\Entities\Employee\Employee;
+use Illuminate\Http\RedirectResponse;
 use MnkyDevTeam\Admin\Http\Requests\EnlistEmployeeRequest;
 
 final class EmployeeEnlistController extends Controller
 {
-    public function __invoke(EnlistEmployeeRequest $request)
+    public function __invoke(EnlistEmployeeRequest $request) : RedirectResponse
     {
         $data = $request->post();
 
@@ -22,7 +23,6 @@ final class EmployeeEnlistController extends Controller
             $employee = Employee::enlistEmployeeAsStaff($this->filterInitialEmployeeInfo($data));
         }
 
-        // dd(route('admin.employee.details', \compact('employee')));
         return \redirect(\route('admin.employee.details', \compact('employee')));
     }
 

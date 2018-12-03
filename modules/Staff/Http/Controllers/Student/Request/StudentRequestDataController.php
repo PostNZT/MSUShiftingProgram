@@ -7,17 +7,18 @@ namespace MnkyDevTeam\Staff\Http\Controllers\Student\Request;
 use Illuminate\Http\Request;
 use App\Entities\Student\Student;
 use Illuminate\Routing\Controller;
+use Illuminate\Http\RedirectResponse;
 
 final class StudentRequestDataController extends Controller
 {
-    public function __invoke(Request $request)
+    public function __invoke(Request $request) : RedirectResponse
     {
         $data = $request->post();
         unset($data['_token']);
 
         $student = Student::enlistStudentRequest($this->filterInitialStudentInfo($data));
 
-        return \redirect(\route('staff.student.request.enlist', \compact('student')));
+        return \redirect(\route('staff.student.request.details', \compact('student')));
     }
 
     private function filterInitialStudentInfo(array $data) : array

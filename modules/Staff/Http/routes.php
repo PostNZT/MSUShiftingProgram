@@ -33,10 +33,16 @@ Route::group(
                 Route::get('/', 'StudentRequestPageController')->name('staff.student.request');
                 Route::post('/enlist', 'StudentRequestDataController')
                     ->name('staff.student.request.enlist');
+                Route::get('{student}/details', 'StudentRequestDetailsPageController')
+                    ->name('staff.student.request.details');
             });
 
             Route::group(['prefix' => 'upload', 'namespace' => 'Upload'], function() {
                 Route::get('/', 'UploadStudentPageController')->name('staff.student.upload');
+            });
+
+            Route::group(['prefix' => 'listing', 'namespace' => 'Listing'], function() {
+                Route::get('/', 'StudentListingPageController')->name('staff.student.listing');
             });
         });
 
