@@ -70,7 +70,7 @@
   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
     <section class="panel">
       <div class="panel-body">
-        CARLO
+        @include('staff::student.listing.layouts.student-listing')
       </div>
     </section>
   </div>
