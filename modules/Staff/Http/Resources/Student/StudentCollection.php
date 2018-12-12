@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace MnkyDevTeam\Admin\Http\Resources\Employee;
+namespace MnkyDevTeam\Staff\Http\Resources\Student;
 
 use Illuminate\Http\Resources\Json\ResourceCollection;
 
-final class EmployeeCollection extends ResourceCollection
+final class StudentCollection extends ResourceCollection
 {
     /**
      * Transform the resource collection into an array.

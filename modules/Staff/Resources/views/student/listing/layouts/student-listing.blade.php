@@ -2,7 +2,7 @@
   <div class="panel-body">
       <h4><i class="fa fa-angle-right"></i> Student Listing</h4>
       <hr>
-    <table id="employee-table" class="table table-striped table-advance table-hover">
+    <table id="student-table" class="table table-striped table-advance table-hover">
       <thead>
         <tr>
           <th>id</th>
@@ -15,7 +15,7 @@
           <th><i class=" fa fa-edit">Shifting College</th>
           <th><i class=" fa fa-edit">Shifting Course</th>
           <th><i class=" fa fa-edit">Times Shifted</th>
-          <th><i class=" fa fa-edit">Shifting Status</th>            
+          <th><i class=" fa fa-edit">Shifting Status</th>
         </tr>
       </thead>
     </table>
@@ -27,7 +27,7 @@
 
   $(document).ready(function () {
       $(function() {
-          var table = $('#employee-table').DataTable({
+          var table = $('#student-table').DataTable({
               "dom": 'Bfrtip',
               "buttons": [
                   'pageLength', 'excel', 'pdf'
@@ -41,23 +41,28 @@
               "autoWidth":false,
               "columns": [
                   { "data": "id", "orderable": true, "searchable": true },
-                  { "data": "first_name", "orderable": true, "searchable": true },
+                  { "data": "student_id", "orderable": false, "searchable": true },
+                  { "data": "first_name", "orderable": false, "searchable": true },
                   { "data": "middle_name", "orderable": false, "searchable": true },
-                  { "data": "last_name", "orderable": false, "searchable": true },
-                  { "data": "employee_id", "orderable": false, "searchable": true },
-                  { "data": "role_id", "orderable": false, "searchable": true },
+                  { "data": "last_name", "orderable": true, "searchable": true },
+                  { "data": "current_college", "orderable": false, "searchable": true },
+                  { "data": "current_course", "orderable": false, "searchable": true },
+                  { "data": "shifting_college", "orderable": false, "searchable": true },
+                  { "data": "shifting_course", "orderable": false, "searchable": true },
+                  { "data": "times_shifted", "orderable": false, "searchable": true },
+                  { "data": "shifting_status", "orderable": false, "searchable": true }
               ],
               "ajax":{
                   headers: {
                       'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                   },
-                  url: "  "
+                  url: "{{\route('staff.student.api.listing.datatable')}}"
               }
           });
           // click rows
-          $('#employee-table tbody').on('click', 'tr', function () {
+          $('#student-table tbody').on('click', 'tr', function () {
               var data = table.row( this ).data();
-              window.location.href = "/employee/"+ data['uuid'] +"/details";
+              window.location.href = "/student/request/"+ data['uuid'] +"/details";
           });
       });
   });

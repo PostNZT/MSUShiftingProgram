@@ -12,7 +12,7 @@
           <th><i class=" fa fa-edit"></i> Employee ID</th>
           <th><i class=" fa fa-edit">Authentication Level</th>
         </tr>
-      </thead>     
+      </thead>
     </table>
   </div>
 </section>
@@ -36,9 +36,9 @@
               "autoWidth":false,
               "columns": [
                   { "data": "id", "orderable": true, "searchable": true },
-                  { "data": "first_name", "orderable": true, "searchable": true },
+                  { "data": "first_name", "orderable": false, "searchable": true },
                   { "data": "middle_name", "orderable": false, "searchable": true },
-                  { "data": "last_name", "orderable": false, "searchable": true },
+                  { "data": "last_name", "orderable": true, "searchable": true },
                   { "data": "employee_id", "orderable": false, "searchable": true },
                   { "data": "role_id", "orderable": false, "searchable": true },
               ],

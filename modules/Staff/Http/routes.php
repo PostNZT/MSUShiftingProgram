@@ -43,11 +43,15 @@ Route::group(
 
             Route::group(['prefix' => 'listing', 'namespace' => 'Listing'], function() {
                 Route::get('/', 'StudentListingPageController')->name('staff.student.listing');
+
+                Route::group(['prefix' => 'api', 'namespace' => 'Api'], function() {
+                    Route::get('/listing', 'StudentListingController@listing')
+                        ->name('staff.student.api.listing');
+                    Route::get('/listing/datatable', 'StudentListingController@datatable')
+                        ->name('staff.student.api.listing.datatable');
+                });
             });
         });
 
-        Route::group(['middleware' => 'auth:staff', 'prefix' => 'profile', 'namespace' => 'Profile'], function () {
-            // Route::get('/', 'ProfilePageController')->name('staff.profile');
-        });
     }
 );

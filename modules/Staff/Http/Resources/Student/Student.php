@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace MnkyDevTeam\Admin\Http\Resources\Employee;
+namespace MnkyDevTeam\Staff\Http\Resources\Student;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-final class Employee extends JsonResource
+final class Student extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -18,11 +18,16 @@ final class Employee extends JsonResource
     {
         return [
             'id'                => $this->id,
+            'student_id'        => $this->student_id,
             'first_name'        => $this->first_name,
             'middle_name'       => $this->middle_name,
             'last_name'         => $this->last_name,
-            'employee_id'       => $this->employee_id,
-            'role_id'           => $this->role->name,
+            'current_college'   => $this->old_college->name,
+            'current_course'    => $this->old_course->name,
+            'shifting_college'  => $this->new_college->name,
+            'shifting_course'   => $this->new_course->name,
+            'times_shifted'     => $this->number_times_shifted,
+            'shifting_status'   => $this->shifting_status,
             'uuid'              => $this->uuid
         ];
     }
