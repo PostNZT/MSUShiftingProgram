@@ -8,10 +8,11 @@ use Illuminate\Http\Request;
 use App\Entities\Student\Student;
 use Illuminate\Routing\Controller;
 use Illuminate\Http\RedirectResponse;
+use MnkyDevTeam\Staff\Http\Requests\StudentRequest;
 
 final class StudentRequestDataController extends Controller
 {
-    public function __invoke(Request $request) : RedirectResponse
+    public function __invoke(StudentRequest $request) : RedirectResponse
     {
         $data = $request->post();
         unset($data['_token']);

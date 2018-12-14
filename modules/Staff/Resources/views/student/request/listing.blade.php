@@ -86,18 +86,22 @@
               <div class="form-group">
                 <div class="col-sm-12">
                   <div class="{{$errors->has('first_name') ? "has-error":''}}">
+                    <span class="help-block"> First Name:</span>
                     <input class="form-control" type="text" placeholder="First Name" name="first_name" value="{{\old('first_name')}}">
                   </div>
                   <br>
                   <div class="{{$errors->has('middle_name') ? "has-error":''}}">
+                    <span class="help-block"> MIddle Name:</span>
                     <input class="form-control" type="text" placeholder="Middle Name" name="middle_name" value="{{\old('middle_name')}}">
                   </div>
                   <br>
                   <div class="{{$errors->has('last_name') ? "has-error":''}}">
+                    <span class="help-block"> Last Name:</span>
                     <input class="form-control" type="text" placeholder="Last Name" name="last_name" value="{{\old('last_name')}}">
                   </div>
                   <br>
                   <div class="{{$errors->has('student_id') ? "has-error":''}}">
+                    <span class="help-block"> Student ID:</span>
                     <input class="form-control" type="text" placeholder="Student ID" name="student_id" value="{{\old('student_id')}}">
                   </div>
                   <div class="{{$errors->has('gender_id') ? "has-error":''}}">
@@ -113,6 +117,7 @@
                   </div>
                   <br>
                   <div class="{{$errors->has('age') ? "has-error":''}}">
+                    <span class="help-block"> Age:</span>
                     <input class="form-control" type="text" placeholder="Age" name="age" value="{{\old('age')}}">
                   </div>
                   <br>
@@ -128,78 +133,108 @@
                     </select>
                   </div>
                   <br>
-                  <div class="{{$errors->has('present_program') ? "has-error":''}}">
+                  <div>
                     <span class="help-block"> Present Program:</span>
-                    <select class="form-control" name="old_college_id">
-                      <option value="" disabled {{empty(\old('old_college_id')) ? "selected" : ""}}>Select College/Department</option>
-                      @if ($colleges->isNotEmpty())
-                          @foreach ($colleges as $college)
-                              <option value="{{$college->id}}" {{!empty(\old('old_college_id')) ? (\old('old_college_id') == $college->id ? "selected" : "") : ""}}>{{$college->name}}</option>
-                          @endforeach
-                      @endif
-                    </select>
+                    <div class="{{$errors->has('old_college_id') ? "has-error":''}}">
+                        <select class="form-control" name="old_college_id">
+                          <option value="" disabled {{empty(\old('old_college_id')) ? "selected" : ""}}>Select College/Department</option>
+                          @if ($colleges->isNotEmpty())
+                              @foreach ($colleges as $college)
+                                  <option value="{{$college->id}}" {{!empty(\old('old_college_id')) ? (\old('old_college_id') == $college->id ? "selected" : "") : ""}}>{{$college->name}}</option>
+                              @endforeach
+                          @endif
+                        </select>
+                    </div>
                     <br>
-                    <select class="form-control" name="old_course_id">
-                      <option value="" disabled {{empty(\old('old_course_id')) ? "selected" : ""}}>Select Course/Program</option>
-                      @if ($courses->isNotEmpty())
-                          @foreach ($courses as $course)
-                              <option value="{{$course->id}}" {{!empty(\old('old_course_id')) ? (\old('old_course_id') == $course->id ? "selected" : "") : ""}}>{{$course->name}}</option>
-                          @endforeach
-                      @endif
-                    </select>
+                    <div class="{{$errors->has('old_course_id') ? "has-error":''}}">
+                      <select class="form-control" name="old_course_id">
+                        <option value="" disabled {{empty(\old('old_course_id')) ? "selected" : ""}}>Select Course/Program</option>
+                        @if ($courses->isNotEmpty())
+                            @foreach ($courses as $course)
+                                <option value="{{$course->id}}" {{!empty(\old('old_course_id')) ? (\old('old_course_id') == $course->id ? "selected" : "") : ""}}>{{$course->name}}</option>
+                            @endforeach
+                        @endif
+                      </select>
+                    </div>
                   </div>
                   <br>
-                  <div class="{{$errors->has('shifting_to') ? "has-error":''}}">
+                  <div>
                     <span class="help-block"> Shifting To:</span>
-                    <select class="form-control" name="new_college_id">
-                      <option value="" disabled {{empty(\old('new_college_id')) ? "selected" : ""}}>Select College/Department</option>
-                      @if ($colleges->isNotEmpty())
-                          @foreach ($colleges as $college)
-                              <option value="{{$college->id}}" {{!empty(\old('new_college_id')) ? (\old('new_college_id') == $college->id ? "selected" : "") : ""}}>{{$college->name}}</option>
-                          @endforeach
-                      @endif
-                    </select>
+                    <div class="{{$errors->has('new_college_id') ? "has-error":''}}">
+                        <select class="form-control" name="new_college_id">
+                          <option value="" disabled {{empty(\old('new_college_id')) ? "selected" : ""}}>Select College/Department</option>
+                          @if ($colleges->isNotEmpty())
+                              @foreach ($colleges as $college)
+                                  <option value="{{$college->id}}" {{!empty(\old('new_college_id')) ? (\old('new_college_id') == $college->id ? "selected" : "") : ""}}>{{$college->name}}</option>
+                              @endforeach
+                          @endif
+                        </select>
+                    </div>
                     <br>
-                    <select class="form-control" name="new_course_id">
-                      <option value="" disabled {{empty(\old('new_course_id')) ? "selected" : ""}}>Select Course/Program</option>
-                      @if ($courses->isNotEmpty())
-                          @foreach ($courses as $course)
-                              <option value="{{$course->id}}" {{!empty(\old('new_course_id')) ? (\old('new_course_id') == $course->id ? "selected" : "") : ""}}>{{$course->name}}</option>
-                          @endforeach
-                      @endif
-                    </select>
+                    <div class="{{$errors->has('new_course_id') ? "has-error":''}}">
+                        <select class="form-control" name="new_course_id">
+                          <option value="" disabled {{empty(\old('new_course_id')) ? "selected" : ""}}>Select Course/Program</option>
+                          @if ($courses->isNotEmpty())
+                              @foreach ($courses as $course)
+                                  <option value="{{$course->id}}" {{!empty(\old('new_course_id')) ? (\old('new_course_id') == $course->id ? "selected" : "") : ""}}>{{$course->name}}</option>
+                              @endforeach
+                          @endif
+                        </select>
+                    </div>
                   </div>
                   <br>
                   <div class="{{$errors->has('year_level') ? "has-error":''}}">
-                    <input class="form-control" type="text" placeholder="Year Level" name="year_level" value="{{\old('year_level')}}">
+                    <span class="help-block"> Year Level:</span>
+                    <select class="form-control" name="year_level">
+                      <option value="" disabled {{empty(\old('year_level')) ? "selected" : ""}}>Select Year Level</option>
+                      @if ($courses->isNotEmpty())
+                          @foreach (array(1,2,3,4,5) as $value)
+                              <option value="{{$value}}" {{!empty(\old('year_level')) ? (\old('year_level') == $value ? "selected" : "") : ""}}>{{$value}}</option>
+                          @endforeach
+                      @endif
+                    </select>
                   </div>
                   <br>
                   <div class="{{$errors->has('contact_no') ? "has-error":''}}">
+                    <span class="help-block"> Contact No:</span>
                     <input class="form-control" type="text" placeholder="Contact Number" name="contact_no" value="{{\old('contact_no')}}">
                   </div>
                   <br>
                   <div class="{{$errors->has('campus_address') ? "has-error":''}}">
+                    <span class="help-block"> Campus Address:</span>
                     <input class="form-control" type="text" placeholder="Campus Address" name="campus_address" value="{{\old('campus_address')}}">
                   </div>
                   <br>
                   <div class="{{$errors->has('guardian_name') ? "has-error":''}}">
+                    <span class="help-block"> Guardian Name:</span>
                     <input class="form-control" type="text" placeholder="Guardian Name" name="guardian_name" value="{{\old('guardian_name')}}">
                   </div>
                   <br>
                   <div class="{{$errors->has('guardian_address') ? "has-error":''}}">
+                    <span class="help-block"> Guardian Address:</span>
                     <input class="form-control" type="text" placeholder="Guardian Address" name="guardian_address" value="{{\old('guardian_address')}}">
                   </div>
                   <br>
                   <div class="{{$errors->has('guardian_number') ? "has-error":''}}">
+                    <span class="help-block"> Guardian Number:</span>
                     <input class="form-control" type="text" placeholder="Guardian Number" name="guardian_number" value="{{\old('guardian_number')}}">
                   </div>
                   <br>
                   <div class="{{$errors->has('guardian_relationship') ? "has-error":''}}">
+                    <span class="help-block"> Relationship to Guardian:</span>
                     <input class="form-control" type="text" placeholder="Relationship to Guardian" name="guardian_relationship" value="{{\old('guardian_relationship')}}">
                   </div>
                   <br>
                   <div class="{{$errors->has('number_times_shifted') ? "has-error":''}}">
-                    <input class="form-control" type="text" placeholder="Numbers of Times Shifted" name="number_times_shifted" value="{{\old('number_times_shifted')}}">
+                    <span class="help-block"> Number of Times Shifted:</span>
+                    <select class="form-control" name="year_level">
+                      <option value="" disabled {{empty(\old('number_times_shifted')) ? "selected" : ""}}>Select Number Of Times Shifted</option>
+                      @if ($courses->isNotEmpty())
+                          @foreach (array(1,2,3,4,5) as $value)
+                              <option value="{{$value}}" {{!empty(\old('number_times_shifted')) ? (\old('number_times_shifted') == $value ? "selected" : "") : ""}}>{{$value}}</option>
+                          @endforeach
+                      @endif
+                    </select>
                   </div>
                 </div>
               </div>
