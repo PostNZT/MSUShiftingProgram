@@ -7,20 +7,20 @@ namespace MnkyDevTeam\Admin\Http\Requests;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Http\FormRequest;
 
-class EnlistEmployeeRequest extends FormRequest
+final class EnlistEmployeeRequest extends FormRequest
 {
     /**
      * Get the validation rules that apply to the request.
      *
      * @return array
      */
-    public function rules()
+    public function rules() : array
     {
         return [
             'first_name'    => 'required|regex:/^[\pL\s\-]+$/u|min:2',
-            'middle_name'   => 'required|min:1',
+            'middle_name'   => 'required|min:2',
             'last_name'     => 'required|regex:/^[\pL\s\-]+$/u|min:2',
-            'employee_id'    => 'required|min:4',
+            'employee_id'   => 'required|min:4',
             'birthdate'     => 'required|date',
             'role_id'       => 'required|integer'
         ];
