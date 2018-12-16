@@ -26,6 +26,10 @@ Route::group(
             Route::group(['prefix' => 'general', 'namespace' => 'General'], function() {
                 Route::get('/', 'StudentGeneralOverviewPageController')->name('counselor.student.general');
             });
+
+            Route::group(['prefix' => 'listing', 'namespace' => 'Listing'], function() {
+                Route::get('/', 'StudentListinPageController')->name('counselor.student.listing');
+            });
         });
     }
 );

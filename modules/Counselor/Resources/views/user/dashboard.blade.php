@@ -53,7 +53,7 @@
       <span>Student</span>
       </a>
     <ul class="sub">
-      <li><a href="">General Overview</a></li>
+      <li><a href="{{\route('counselor.student.general')}}">General Overview</a></li>
       <li><a href="">Student List</a></li>
     </ul>
   </li>
