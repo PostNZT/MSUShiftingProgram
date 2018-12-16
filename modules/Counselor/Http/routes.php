@@ -29,6 +29,13 @@ Route::group(
 
             Route::group(['prefix' => 'listing', 'namespace' => 'Listing'], function() {
                 Route::get('/', 'StudentListinPageController')->name('counselor.student.listing');
+
+                Route::group(['prefix' => 'api', 'namespace' => 'Api'], function() {
+                    Route::get('/listing', 'StudentResourceListingController@listing')
+                        ->name('counselor.student.api.listing');
+                    Route::get('/listing/datatable', 'StudentResourceListingController@datatable')
+                        ->name('counselor.student.api.listing.datatable');
+                });
             });
         });
     }
