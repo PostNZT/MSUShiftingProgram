@@ -21,5 +21,11 @@ Route::group(
 
             Route::post('logout', "Auth\LogoutController")->name('counselor.logout');
         });
+
+        Route::group(['middleware' => 'auth:counselor', 'prefix' => 'student', 'namespace' => 'Student'], function() {
+            Route::group(['prefix' => 'general', 'namespace' => 'General'], function() {
+                Route::get('/', 'StudentGeneralOverviewPageController')->name('counselor.student.general');
+            });
+        });
     }
 );
