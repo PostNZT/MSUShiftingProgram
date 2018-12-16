@@ -22,7 +22,7 @@ final class StudentRequest extends FormRequest
             'last_name'     => 'required|regex:/^[\pL\s\-]+$/u|min:2',
             'student_id'    => 'required|string|min:4',
             'gender_id'     => 'required|integer',
-            'age'           => 'required|integer|min:1|max:2',
+            'age'           => 'required|integer|min:1|max:100',
             'civil_status_id' => 'required|integer',
             'old_college_id' => 'required|integer',
             'old_course_id' => 'required|integer',

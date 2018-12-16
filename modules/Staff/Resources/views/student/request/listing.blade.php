@@ -227,11 +227,11 @@
                   <br>
                   <div class="{{$errors->has('number_times_shifted') ? "has-error":''}}">
                     <span class="help-block"> Number of Times Shifted:</span>
-                    <select class="form-control" name="year_level">
+                    <select class="form-control" name="number_times_shifted">
                       <option value="" disabled {{empty(\old('number_times_shifted')) ? "selected" : ""}}>Select Number Of Times Shifted</option>
                       @if ($courses->isNotEmpty())
-                          @foreach (array(1,2,3,4,5) as $value)
-                              <option value="{{$value}}" {{!empty(\old('number_times_shifted')) ? (\old('number_times_shifted') == $value ? "selected" : "") : ""}}>{{$value}}</option>
+                          @foreach (array(1,2,3,4,5) as $tvalue)
+                              <option value="{{$tvalue}}" {{!empty(\old('number_times_shifted')) ? (\old('number_times_shifted') == $tvalue ? "selected" : "") : ""}}>{{$tvalue}}</option>
                           @endforeach
                       @endif
                     </select>
