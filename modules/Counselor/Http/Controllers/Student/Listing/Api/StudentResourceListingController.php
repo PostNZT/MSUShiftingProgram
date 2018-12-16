@@ -1,17 +1,15 @@
 <?php
 
-declare(strict_types=1);
-
-namespace MnkyDevTeam\Staff\Http\Controllers\Student\Listing\Api;
+namespace MnkyDevTeam\Counselor\Http\Controllers\Student\Listing\Api;
 
 use App\Entities\Student\Student;
 use Illuminate\Routing\Controller;
 use App\Traits\DataTable\DataTableTrait;
 use Illuminate\Database\Eloquent\Collection;
-use MnkyDevTeam\Staff\Http\Resources\Student\StudentCollection;
-use MnkyDevTeam\Staff\Http\Resources\Student\Student as StudentResource;
+use MnkyDevTeam\Counselor\Http\Resources\Student\StudentCollection;
+use MnkyDevTeam\Counselor\Http\Resources\Student\Student as StudentResource;
 
-final class StudentListingController extends Controller
+class StudentResourceListingController extends Controller
 {
     use DataTableTrait;
 

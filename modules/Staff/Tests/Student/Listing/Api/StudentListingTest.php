@@ -14,7 +14,6 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 
 final class StudentListingTest extends TestCase
 {
-
     use RefreshDatabase;
     use StaffFactoryHelper;
 
