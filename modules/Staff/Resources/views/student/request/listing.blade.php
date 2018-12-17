@@ -230,7 +230,7 @@
                     <select class="form-control" name="number_times_shifted">
                       <option value="" disabled {{empty(\old('number_times_shifted')) ? "selected" : ""}}>Select Number Of Times Shifted</option>
                       @if ($courses->isNotEmpty())
-                          @foreach (array(1,2,3,4,5) as $tvalue)
+                          @foreach (array(0,1,2,3,4,5) as $tvalue)
                               <option value="{{$tvalue}}" {{!empty(\old('number_times_shifted')) ? (\old('number_times_shifted') == $tvalue ? "selected" : "") : ""}}>{{$tvalue}}</option>
                           @endforeach
                       @endif

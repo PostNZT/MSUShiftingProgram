@@ -29,6 +29,7 @@ Route::group(
 
             Route::group(['prefix' => 'listing', 'namespace' => 'Listing'], function() {
                 Route::get('/', 'StudentListinPageController')->name('counselor.student.listing');
+                Route::get('{student}/details', 'StudentDetailsPageController')->name('counselor.student.listing.details');
 
                 Route::group(['prefix' => 'api', 'namespace' => 'Api'], function() {
                     Route::get('/listing', 'StudentResourceListingController@listing')

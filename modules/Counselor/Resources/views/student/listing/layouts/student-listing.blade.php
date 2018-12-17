@@ -56,13 +56,13 @@
                   headers: {
                       'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                   },
-                  url: "{{\route('staff.student.api.listing.datatable')}}"
+                  url: "{{\route('counselor.student.api.listing.datatable')}}"
               }
           });
           // click rows
           $('#student-table tbody').on('click', 'tr', function () {
               var data = table.row( this ).data();
-              window.location.href = "/student/request/"+ data['uuid'] +"/details";
+              window.location.href = "/student/listing/"+ data['uuid'] +"/details";
           });
       });
   });
