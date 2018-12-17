@@ -12,7 +12,7 @@
 <div class="panel-body">
   <div class="tab-content">
     <div id="student-info" class="tab-pane active">
-        
+
     </div>
     <div id="student-status" class="tab-pane">
 

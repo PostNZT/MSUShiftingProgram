@@ -75,7 +75,7 @@
   <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
     <section class="panel">
       <div class="panel-body">
-
+          @include('counselor::student.listing.layouts.details-student-data-box')
       </div>
     </section>
   </div>

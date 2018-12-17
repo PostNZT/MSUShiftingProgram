@@ -70,13 +70,14 @@
   <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
     <section class="panel">
       <div class="panel-body">
+        @include('staff::student.request.layout.details-student-profile-box')
       </div>
     </section>
   </div>
   <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
     <section class="panel">
       <div class="panel-body">
-        @include('staff::student.request.layout.details-student-update-box')
+        @include('staff::student.request.layout.details-student-data-box')
       </div>
     </section>
   </div>
