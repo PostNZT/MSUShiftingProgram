@@ -58,7 +58,6 @@
     <ul class="sub">
       <li><a href="{{\route('staff.student.general')}}">General Overview</a></li>
       <li><a href="{{\route('staff.student.request')}}">Student Request</a></li>
-      <li><a href="{{\route('staff.student.upload')}}">Upload Student Record</a></li>
       <li><a href="{{\route('staff.student.listing')}}">Student List</a></li>
     </ul>
   </li>
@@ -70,7 +69,7 @@
   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
     <section class="panel">
       <div class="panel-body">
-        @include('staff::student.listing.layouts.student-listing')  
+        @include('staff::student.listing.layouts.student-listing')
       </div>
     </section>
   </div>
