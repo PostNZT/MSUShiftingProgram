@@ -55,7 +55,6 @@
     <ul class="sub">
       <li><a href="{{\route('staff.student.general')}}">General Overview</a></li>
       <li><a href="{{\route('staff.student.request')}}">Student Request</a></li>
-      <li><a href="{{\route('staff.student.upload')}}">Upload Student Record</a></li>
       <li><a href="{{\route('staff.student.listing')}}">Student List</a></li>
     </ul>
   </li>
