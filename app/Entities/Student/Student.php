@@ -5,7 +5,9 @@ declare(strict_types=1);
 namespace App\Entities\Student;
 
 use Ramsey\Uuid\Uuid;
+use App\Entities\Misc\Gender;
 use App\Entities\Programs\Course;
+use App\Entities\Misc\CivilStatus;
 use App\Entities\Programs\College;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Database\Eloquent\Model;
@@ -58,5 +60,15 @@ class Student extends Model
     public function new_course() : object
     {
         return $this->belongsTo(Course::class, 'new_course_id');
+    }
+
+    public function gender() : object
+    {
+        return $this->belongsTo(Gender::class, 'gender_id');
+    }
+
+    public function civil_status() : object
+    {
+        return $this->belongsTo(CivilStatus::class, 'civil_status_id');
     }
 }
