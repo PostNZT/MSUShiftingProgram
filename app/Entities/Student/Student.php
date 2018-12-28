@@ -10,6 +10,7 @@ use App\Entities\Programs\Course;
 use App\Entities\Misc\CivilStatus;
 use App\Entities\Programs\College;
 use Illuminate\Support\Facades\Hash;
+use App\Entities\Misc\ShiftingStatus;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 
@@ -21,10 +22,15 @@ class Student extends Model
     public static function enlistStudentRequest(array $data) : self
     {
         $data['uuid'] = Uuid::uuid4();
-        $data['shifting_status'] =  false;
+        $data['shifting_status_id'] =  3;
         $student = Student::firstOrCreate($data);
 
         return $student;
+    }
+
+    public static function statusUpdate(array $data) : array
+    {
+        //OOP SHOULD BE IMPLEMENTED! INCREMENT OF NUMBER OF SHIFTING!
     }
 
     public function getFullNameAttribute() : string
@@ -70,5 +76,10 @@ class Student extends Model
     public function civil_status() : object
     {
         return $this->belongsTo(CivilStatus::class, 'civil_status_id');
+    }
+
+    public function shifting_status() : object
+    {
+        return $this->belongsTo(ShiftingStatus::class, 'shifting_status_id');
     }
 }
