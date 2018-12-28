@@ -9,6 +9,7 @@ use App\Entities\Misc\Gender;
 use App\Entities\Student\Student;
 use Illuminate\Routing\Controller;
 use App\Entities\Misc\CivilStatus;
+use App\Entities\Misc\ShiftingStatus;
 
 final class StudentDetailsPageController extends Controller
 {
@@ -16,11 +17,13 @@ final class StudentDetailsPageController extends Controller
     {
         $genders = Gender::all();
         $civil_statuses = CivilStatus::all();
+        $shifting_statuses = ShiftingStatus::all();
 
         return \view('counselor::student.listing.details', \compact(
           'student',
           'genders',
-          'civil_statuses'
+          'civil_statuses',
+          'shifting_statuses'
         ));
     }
 }
