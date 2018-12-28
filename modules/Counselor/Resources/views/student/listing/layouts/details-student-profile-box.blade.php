@@ -13,6 +13,9 @@
        <label class="control-label">Student ID:</label>
        <label class="control-label"><strong>{{$student->student_id}}</strong></label>
      <br>
+       <label class="control-label">Shifting Status:</label>
+       <label class="control-label"><strong>{{$student->shifting_status->name}}</strong></label>
+     <br>
        <label class="control-label">Year Level:</label>
        <label class="control-label"><strong>{{$student->year_level}}</strong></label>
      <br>
