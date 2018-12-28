@@ -36,7 +36,7 @@ class CreateStudentsTable extends Migration
             $table->string('guardian_relationship');
             $table->integer('number_times_shifted');
             $table->string('picture')->nullable();
-            $table->boolean('shifting_status')->default('false');
+            $table->integer('shifting_status_id');
             $table->unique(['first_name', 'middle_name', 'last_name'], 'student_name');
             $table->timestamps();
         });
