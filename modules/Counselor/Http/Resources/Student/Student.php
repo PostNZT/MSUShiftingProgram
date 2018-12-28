@@ -27,7 +27,7 @@ final class Student extends JsonResource
             'shifting_college'  => $this->new_college->name,
             'shifting_course'   => $this->new_course->name,
             'times_shifted'     => $this->number_times_shifted,
-            'shifting_status'   => $this->shifting_status,
+            'shifting_status'   => $this->shifting_status->name,
             'uuid'              => $this->uuid
         ];
     }
