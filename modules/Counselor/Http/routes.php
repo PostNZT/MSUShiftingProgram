@@ -30,6 +30,8 @@ Route::group(
             Route::group(['prefix' => 'listing', 'namespace' => 'Listing'], function() {
                 Route::get('/', 'StudentListinPageController')->name('counselor.student.listing');
                 Route::get('{student}/details', 'StudentDetailsPageController')->name('counselor.student.listing.details');
+                Route::patch('{student}/details/update', 'StudentUpdateShiftingStatusController')
+                    ->name('counselor.student.details.update-shifting-status');
 
                 Route::group(['prefix' => 'api', 'namespace' => 'Api'], function() {
                     Route::get('/listing', 'StudentResourceListingController@listing')
