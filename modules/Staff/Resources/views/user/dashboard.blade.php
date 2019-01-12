@@ -61,7 +61,31 @@
 </ul>
 @endsection
 @section('content')
-prfile
+    <section class="wrapper site-min-height">
+        <div class="row mt">
+            <div class="row content-panel">
+                <form role="form" class="form-horizontal" enctype="multipart/form-data" method="POST" action="">
+                    {{ csrf_field() }}
+                    {{ method_field('PATCH') }}
+                    <div class="col-md-3 center-divider centered">
+                      <div class="profile-pic">
+                          <p><img class="img-circle" src={{$staff->picture()}}></p>
+                          <p type="file" class="file-control"  name="picture"><button class="btn btn-theme"><i class="fa fa-wrench"></i> Update Image</button></p>
+                      </div>
+                    </div>
+                    <!-- /col-md-4 -->
+                    <div class="col-md-4 profile-text">
+                      <br>
+                      <h3>{{$staff->fullName}}</h3>
+                      <h6>{{$staff->role->name}}</h6>
+                      <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC.</p>
+                    </div>
+                </form>
+
+              </div>
+        </div>
+
+    </section>
 @endsection
 
 @section('scripts')

@@ -16,6 +16,7 @@ final class StudentUpdatePersonalInformationController extends Controller
         $data = $request->post();
         unset($data['_token']);
 
+
         
     }
 }
