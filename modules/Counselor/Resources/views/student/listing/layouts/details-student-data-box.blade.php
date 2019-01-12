@@ -18,7 +18,7 @@
       <div class="row detailed">
         <div class="col-lg-8 col-lg-offset-2 detailed">
             <h4 class="mb">Transcript of Records</h4>
-            @include('counselor::student.listing.layouts.personal-info')
+            hilllllx
         </div>
       </div>
     </div>
