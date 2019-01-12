@@ -27,9 +27,18 @@
       </div>
       <hr>
       <div style="text-align: center;">
-        <button type="submit" class="btn btn-theme03 "><i class="fa fa-check"></i> Update Shifting Status</button>
+          <button type="submit" class="btn btn-theme03 "><i class="fa fa-check"></i> Update Shifting Status</button>
+
       </div>
 
    </form>
  </div>
 </div>
+
+
+<script type="text/javascript">
+    function getShiftingStatusID() {
+        var selectedShiftingStatus = document.getElementById($shifting_status->id);
+        console.log(selectedShiftingStatus);
+    }
+</script>
