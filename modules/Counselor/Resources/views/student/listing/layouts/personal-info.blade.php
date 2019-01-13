@@ -16,7 +16,7 @@
         <div>
           <span class="help-block"> Gender:</span>
           <select class="form-control" name="gender_id">
-            <option value="" disabled {{empty(\old('gender_id')) ? "selected" : ""}}>{{$student->gender->name}}</option>
+            <option value="{{$student->gender_id}}">{{$student->gender->name}}</option>
             @if ($genders->isNotEmpty())
                 @foreach ($genders as $gender)
                     <option value="{{$gender->id}}" {{!empty(\old('gender_id')) ? (\old('gender_id') == $gender->id ? "selected" : "") : ""}}>{{$gender->name}}</option>
@@ -31,7 +31,7 @@
         <div>
           <span class="help-block"> Civil Status:</span>
           <select class="form-control" name="civil_status_id">
-            <option value="" disabled {{empty(\old('civil_status_id')) ? "selected" : ""}}>{{$student->civil_status->name}}</option>
+            <option value="{{$student->civil_status_id}}">{{$student->civil_status->name}}</option>
             @if ($genders->isNotEmpty())
                 @foreach ($civil_statuses as $civil_status)
                     <option value="{{$civil_status->id}}" {{!empty(\old('civil_status_id')) ? (\old('civil_status_id') == $civil_status->id ? "selected" : "") : ""}}>{{$civil_status->name}}</option>

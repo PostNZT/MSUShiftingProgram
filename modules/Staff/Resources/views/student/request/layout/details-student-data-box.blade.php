@@ -33,9 +33,10 @@
     <div id="student-upload" class="tab-pane">
       <div class="row detailed">
         <div class="col-lg-8 col-lg-offset-2 detailed">
-            <h4 class="mb">Personal Information</h4>
+            <h4 class="mb">Upload Grades</h4>
         </div>
       </div>
     </div>
+  </div>
   </div>
 </div>

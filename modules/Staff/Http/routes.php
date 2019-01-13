@@ -35,6 +35,8 @@ Route::group(
                     ->name('staff.student.request.enlist');
                 Route::get('{student}/details', 'StudentRequestDetailsPageController')
                     ->name('staff.student.request.details');
+                Route::patch('{student}/details/updateInformation', 'StudentRequestUpdateController')
+                    ->name('staff.student.request.details.update-personal-information');
             });
 
             Route::group(['prefix' => 'upload', 'namespace' => 'Upload'], function() {

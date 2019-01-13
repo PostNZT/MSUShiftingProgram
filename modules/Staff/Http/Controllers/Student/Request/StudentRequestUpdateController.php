@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace MnkyDevTeam\Counselor\Http\Controllers\Student\Listing;
+namespace MnkyDevTeam\Staff\Http\Controllers\Student\Request;
 
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -10,13 +10,13 @@ use Illuminate\Http\Response;
 use App\Entities\Student\Student;
 use Illuminate\Routing\Controller;
 
-final class StudentUpdatePersonalInformationController extends Controller
+final class StudentRequestUpdateController extends Controller
 {
     public function __invoke(Student $student, Request $request)
-    {
+      {
         $data = $request->post();
         unset($data['_token']);
-        
+
         $student->gender_id              = $data['gender_id'];
         $student->age                    = $data['age'];
         $student->campus_address         = $data['campus_address'];
@@ -27,6 +27,6 @@ final class StudentUpdatePersonalInformationController extends Controller
         $student->updated_at             = Carbon::now();
         $student->save();
 
-        return \redirect()->route('counselor.student.listing.details', $student)->with('message', "Successfully Updated");
+        return \redirect()->route('staff.student.request.details', $student)->with('message', "Successfully Updated");
     }
 }
