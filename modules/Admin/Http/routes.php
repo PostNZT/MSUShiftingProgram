@@ -38,5 +38,17 @@ Route::group(
                     ->name('admin.employee.listing.api.datatables');
             });
         });
+
+        Route::group(['middleware' => 'auth:admin', 'prefix' => 'student', 'namespace' => 'Student'], function (){
+            Route::get('/listing', 'StudentListingPageController')->name('admin.student.listing');
+            Route::get('/listing/{student}/details', 'AdminStudentDetailsPageController')->name('admin.student.listing.details');
+
+            Route::group(['prefix' => 'api', 'namespace' => 'Api'], function() {
+                Route::get('/listing', 'AdminStudentResourceController@listing')
+                    ->name('admin.student.api.listing');
+                Route::get('/listing/datatable', 'AdminStudentResourceController@datatable')
+                    ->name('admin.student.api.listing.datatable');
+            });
+        });
     }
 );

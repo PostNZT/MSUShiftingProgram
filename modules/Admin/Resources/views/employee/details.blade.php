@@ -1,7 +1,7 @@
 @extends('layout.master')
 
 @section('header')
-  
+
   <!-- Bootstrap core CSS -->
   <link href="{{asset('lib/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
   <!--external css-->
@@ -56,17 +56,11 @@
       <span>Employees </span>
     </a>
   </li>
-  <li class="sub-menu">
-    <a href="javascript:;">
+  <li>
+    <a href="{{\route('admin.student.listing')}}">
       <i class="fa fa-sitemap"></i>
-      <span>Students</span>
-      </a>
-    <ul class="sub">
-      <li><a href="">General</a></li>
-      <li><a href="">Buttons</a></li>
-      <li><a href="">Panels</a></li>
-      <li><a href="">Font Awesome</a></li>
-    </ul>
+      <span>Student Listing </span>
+    </a>
   </li>
 </ul>
 @endsection
@@ -77,7 +71,7 @@
     <section class="panel">
       <div class="panel-body">
         @include('admin::employee.layout.details-employee-profile-box')
-      </div>  
+      </div>
     </section>
   </div>
   <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
@@ -92,7 +86,7 @@
 @endsection
 
 @section('scripts')
-  
+
   <script type="text/javascript" src="https://cdn.datatables.net/v/dt/jszip-2.5.0/dt-1.10.16/b-1.5.1/b-html5-1.5.1/r-2.2.1/sc-1.4.3/datatables.js"></script>
 
   <script src="{{asset('lib/bootstrap/js/bootstrap.min.js')}}"></script>

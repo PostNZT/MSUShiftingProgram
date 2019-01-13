@@ -10,11 +10,14 @@
   <!-- Custom styles for this template -->
   <link href="{{asset('css/style.css')}}" rel="stylesheet">
   <link href="{{asset('css/style-responsive.css')}}" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="{{asset('DataTables/datatables.min.css')}}"/>
-  <script type="text/javascript" src="{{asset('js/jquery-3.3.1.min.js')}}" ></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jszip-2.5.0/dt-1.10.16/b-1.5.1/b-html5-1.5.1/r-2.2.1/sc-1.4.3/datatables.min.css"/>
+  <script
+        src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
 @endsection
 @section('title')
-	DSA - Employee Listing
+	DSA - Student Details
 @endsection
 
 @section('navbar')
@@ -48,33 +51,35 @@
     </a>
   </li>
   <li>
-    <a class="active" href="{{\route('admin.employee')}}">
+    <a href="{{\route('admin.employee')}}">
       <i class="fa fa-group"></i>
       <span>Employees </span>
     </a>
   </li>
   <li>
-    <a href="{{\route('admin.student.listing')}}">
+    <a class="active" href="{{\route('admin.student.listing')}}">
       <i class="fa fa-sitemap"></i>
       <span>Student Listing </span>
     </a>
   </li>
 </ul>
 @endsection
-@section('content_header')
-<div class="col-lg-12 main-chart">
-  <div class="border-head">
-    <h3>Employee Listing</h3>
-  </div>
-</div>
-@endsection
+
 @section('content')
 <div class="row mt">
-  <div class="col-lg-4">
-    @include('admin::employee.layout.employee-enlisting')
+  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+    <section class="panel">
+      <div class="panel-body">
+          @include('admin::student.listing.layouts.details-student-profile-box')
+      </div>
+    </section>
   </div>
-  <div class="col-lg-8">
-    @include('admin::employee.layout.employee-listing')
+  <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+    <section class="panel">
+      <div class="panel-body">
+            @include('admin::student.listing.layouts.details-student-data-box')
+      </div>
+    </section>
   </div>
 </div>
 
@@ -82,7 +87,7 @@
 
 @section('scripts')
 
-  <script type="text/javascript" src="{{asset('DataTables/datatables.min.js')}}"></script>
+  <script type="text/javascript" src="https://cdn.datatables.net/v/dt/jszip-2.5.0/dt-1.10.16/b-1.5.1/b-html5-1.5.1/r-2.2.1/sc-1.4.3/datatables.js"></script>
 
   <script src="{{asset('lib/bootstrap/js/bootstrap.min.js')}}"></script>
   <script class="include" type="text/javascript" src="{{asset('lib/jquery.dcjqaccordion.2.7.js')}}"></script>

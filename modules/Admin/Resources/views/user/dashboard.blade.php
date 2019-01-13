@@ -1,6 +1,6 @@
 @extends('layout.master')
 @section('header')
-  
+
   <!-- Bootstrap core CSS -->
   <link href="{{asset('lib/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
   <!--external css-->
@@ -53,17 +53,11 @@
       <span>Employees </span>
     </a>
   </li>
-  <li class="sub-menu">
-    <a href="javascript:;">
+  <li>
+    <a href="{{\route('admin.student.listing')}}">
       <i class="fa fa-sitemap"></i>
-      <span>Students</span>
-      </a>
-    <ul class="sub">
-      <li><a href="">General</a></li>
-      <li><a href="">Buttons</a></li>
-      <li><a href="">Panels</a></li>
-      <li><a href="">Font Awesome</a></li>
-    </ul>
+      <span>Student Listing </span>
+    </a>
   </li>
 </ul>
 @endsection
