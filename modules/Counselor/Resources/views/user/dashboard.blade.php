@@ -60,7 +60,31 @@
 </ul>
 @endsection
 @section('content')
-profile
+<section class="wrapper site-min-height">
+    <div class="row mt">
+        <div class="row content-panel">
+            <form role="form" class="form-horizontal" enctype="multipart/form-data" method="POST" action="">
+                {{ csrf_field() }}
+                {{ method_field('PATCH') }}
+                <div class="col-md-3 center-divider centered">
+                  <div class="profile-pic">
+                      <p><img class="img-circle" src={{$counselor->picture()}}></p>
+                      <p type="file" class="file-control"  name="picture"><button class="btn btn-theme" disabled><i class="fa fa-wrench"></i> Update Image</button></p>
+                  </div>
+                </div>
+                <!-- /col-md-4 -->
+                <div class="col-md-4 profile-text">
+                  <br>
+                  <h3>{{$counselor->fullName}}</h3>
+                  <h6>{{$counselor->role->name}}</h6>
+                  <p>Education is the passport to the future, for tomorrow belongs to those who prepare for it today.</p>
+                </div>
+            </form>
+
+          </div>
+    </div>
+
+</section>
 @endsection
 
 @section('scripts')

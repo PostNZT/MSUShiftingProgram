@@ -70,7 +70,7 @@
                     <div class="col-md-3 center-divider centered">
                       <div class="profile-pic">
                           <p><img class="img-circle" src={{$staff->picture()}}></p>
-                          <p type="file" class="file-control"  name="picture"><button class="btn btn-theme"><i class="fa fa-wrench"></i> Update Image</button></p>
+                          <p type="file" class="file-control"  name="picture"><button class="btn btn-theme" disabled><i class="fa fa-wrench"></i> Update Image</button></p>
                       </div>
                     </div>
                     <!-- /col-md-4 -->
@@ -78,7 +78,7 @@
                       <br>
                       <h3>{{$staff->fullName}}</h3>
                       <h6>{{$staff->role->name}}</h6>
-                      <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC.</p>
+                      <p>Education is the passport to the future, for tomorrow belongs to those who prepare for it today.</p>
                     </div>
                 </form>
 
