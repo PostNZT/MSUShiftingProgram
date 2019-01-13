@@ -17,28 +17,27 @@ final class EmployeeDetailsUpdateInfoController extends Controller
     public function __invoke(Employee $employee, Request $request)
     {
         $data = $request->post();
-        //need to add picture upload
-        dd($data['first_name']);
+        unset($data['_token']);
 
+        //IMPLEMENT IMAGE UPLOAD
+        // dd($data);
+        // $file = $request->file('image');
+        // $filename = Uuid::uuid4()->toString().'-'. str_slug(now(), '-').'.'.$file->getClientOriginalExtension();
+        // $path = $file->storeAs('/', $filename, 'avatars');
+        //
+        // if ($employee->picture) {
+        //     Storage::disk('avatars')->delete($employee->picture);
+        // }
+        // $employee->picture = $path;
 
-  //       $employee = new file;
+        $employee->first_name         = $data['first_name'];
+        $employee->middle_name        = $data['middle_name'];
+        $employee->last_name          = $data['last_name'];
+        $employee->employee_id        = $data['employee_id'];
+        $employee->birthdate          = $data['birthdate'];
 
-        // $employee->first_name 		= Input::get('first_name');
-  //       $employee->middle_name      = Input::get('middle_name');
-  //       $employee->last_name        = Input::get('last_name');
-  //       $employee->employee_id      = Input::get('employee_id');
-  //       $employee->birthdate        = Input::get('birthdate');
-  //       $employee->role_id          = Input::get('role_id');
+        $employee->save();
 
-  //       if (Input::hasFile('picture')) {
-  //       	$picture = Input::file('picture');
-  //       	$picture->move(avatars. '/' . $picture->getClientOriginalName());
-
-  //       	$employee->picture = $picture->getClientOriginalName();
-
-  //       }
-
-  //       $employee->save();
 
         return \redirect(\route('admin.employee.details', \compact('employee')))
                 ->with('message', 'Successfully Updated Employee Information');

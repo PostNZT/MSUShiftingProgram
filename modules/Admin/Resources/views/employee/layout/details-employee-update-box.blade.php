@@ -27,13 +27,6 @@
                     </ul>
                 </div>
             @endif
-            <div class="form-group">
-              <label class="col-lg-4 control-label"> Avatar:</label>
-              <div class="col-lg-6">
-                <input type="file" class="file-control"  name="picture">
-              </div>
-            </div>
-            <br>
              <div>
                 <span class="help-block">First Name:</span>
                 <input class="form-control" type="text" placeholder="" name="first_name" value="{{$employee->first_name}}">
@@ -54,7 +47,7 @@
                 <span class="help-block">Birthdate:</span>
                 <input class="form-control form-control-inline input-medium default-date-picker" size="16" type="text" name="birthdate" value="{{$employee->birthdate}}">
               </div>
-              <div>  
+              <div>
                 <span class="help-block"> Role:</span>
                 <select class="form-control" name="role_id">
                   <option value="" disabled {{empty(\old('role_id')) ? "selected" : ""}}>{{$employee->role->name}}</option>
@@ -99,8 +92,8 @@
             <button type="submit" class="btn btn-theme03 "><i class="fa fa-check"></i> Reset</button>
           </div>
         </form>
-      </div> 
-      </div>  
+      </div>
+      </div>
     </div>
   </div>
 </div>
