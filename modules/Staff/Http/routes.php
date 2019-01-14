@@ -40,14 +40,15 @@ Route::group(
                         ->name('staff.student.request.details.update-personal-information');
                     Route::post('uploadInformation', 'StudentRequestUploadGradesController')
                         ->name('staff.student.request.details.upload-grades-information');
+
+                    Route::group(['prefix' => 'api', 'namespace' => 'Api'], function() {
+                      Route::get('/listing', 'StudentGradesListingController@listing')
+                      ->name('staff.student.details.api.listing');
+                      Route::get('/listing/datatable', 'StudentGradesListingController@datatable')
+                      ->name('staff.student.details.api.listing.datatable');
+                    });
                 });
 
-                Route::group(['prefix' => 'api', 'namespace' => 'Api'], function() {
-                    Route::get('/listing', 'StudentGradesListingController@listing')
-                        ->name('staff.student.details.api.listing');
-                    Route::get('/listing/datatable', 'StudentGradesListingController@datatable')
-                        ->name('staff.student.details.api.listing.datatable');
-                });
 
             });
 
