@@ -44,6 +44,11 @@ Route::group(
         Route::group(['middleware' => 'auth:admin', 'prefix' => 'student/listing', 'namespace' => 'Student'], function (){
             Route::get('/', 'StudentListingPageController')->name('admin.student.listing');
             Route::get('{student}/details', 'AdminStudentDetailsPageController')->name('admin.student.listing.details');
+            Route::patch('{student}/details/updateInformation', 'AdminStudentUpdatePersonalInformationController')
+                ->name('admin.student.details.update-personal-information');
+            Route::patch('{student}/details/updateStatus', 'AdminStudentShiftingStatusController')
+                ->name('admin.student.details.update-shifting-status');
+
             Route::group(['prefix' => '{student}/details', 'namespace' => 'Api'], function (){
                 Route::get('/listing', 'StudentAdminGradesListingController@listing')
                     ->name('admin.student.details.api.listing');

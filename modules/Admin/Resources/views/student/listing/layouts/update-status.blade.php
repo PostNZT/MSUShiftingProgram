@@ -1,6 +1,6 @@
 <div class="row detailed">
  <div class="col-lg-12 detailed">
-   <form role="form" class="form-horizontal" enctype="multipart/form-data" method="POST" action="{{\route('counselor.student.details.update-shifting-status', $student)}}">
+   <form role="form" class="form-horizontal" enctype="multipart/form-data" method="POST" action="{{\route('admin.student.details.update-shifting-status', $student)}}">
      {{ csrf_field() }}
      {{ method_field('PATCH') }}
      @if ($errors->any())
