@@ -2,29 +2,38 @@
 
 namespace MnkyDevTeam\Staff\Http\Controllers\Student\Request;
 
+use Carbon\Carbon;
+use League\Csv\Reader;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
 use App\Entities\Student\Student;
-use MnkyDevTeam\Staff\Http\Requests\GradeImportRequest;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
+use App\Entities\Student\StudentGradeInformation;
 
 class StudentRequestUploadGradesController extends Controller
 {
+    protected $import_path = 'files/grades/import';
+
     public function __invoke(Request $request, Student $student)
     {
+        $employee = Auth::guard('staff')->user();
         $date = Carbon::now();
         $batch = Carbon::now()->format('YmdHisv');
         $file = $request->file('grades_csv');
+        $data = $request->post();
+        unset($data['_token']);
         $safe_name = str_slug(pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME), "_");
         $file_name = "{$safe_name}.{$file->getClientOriginalExtension()}";
         $path = Storage::disk('local')->putFileAs($this->import_path, $file, $file_name);
             $tmp_path = realpath($file);
 
-        $attendanceCsv = Reader::createFromPath($tmp_path, 'r');
-        $attendanceCsv->setHeaderOffset(0);
-        $records = $attendanceCsv->getRecords(['no', 'dn', 'uid', 'name',
-            'status', 'action', 'apb', 'jobcode', 'datetime', 'batch_file',
-            'file_path'
+        $gradesCSV = Reader::createFromPath($tmp_path, 'r');
+        $gradesCSV->setHeaderOffset(0);
+        $records = $gradesCSV->getRecords(['semester', 'school_year',
+            'subject_code', 'section',
+            'description', 'grade'
           ]);
         $datas = [];
         foreach ($records as $index => $row) {
@@ -33,17 +42,17 @@ class StudentRequestUploadGradesController extends Controller
             foreach ($row as $key => $value) {
                 $data[trim($key)] = $value;
             }
-            $data['name'] = strtoupper(str_replace(" ", "", $data['name']));
-            $data['datetime'] = Carbon::parse(trim($row['datetime']));
-            $data['uid'] = Uuid::uuid4()->toString();
+            $data['student_id'] = $student->student_id;
+            $data['username'] = $employee->username;
+            $data['staff_name'] = $employee->fullName;
             $data['batch_file'] = $batch;
             $data['file_path'] = $path;
             $data['created_at'] = $date;
             array_push($datas, $data);
-            AttendanceRaw::create($data);
+            StudentGradeInformation::create($data);
         }
 
-        return \redirect(\route('office.hr.attendance.listing'));
+        return \redirect(\route('staff.student.request.details', $student));
 
 
     }

@@ -15,13 +15,17 @@ class CreateStudentGradeInformationsTable extends Migration
     {
         Schema::create('student_grade_informations', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('student_id');
+            $table->string('student_id');
+            $table->string('username');
+            $table->string('staff_name');
             $table->string('semester');
             $table->string('school_year');
             $table->string('subject_code');
             $table->string('section');
             $table->string('description');
             $table->string('grade');
+            $table->string('batch_file');
+            $table->string('file_path');
             $table->timestamps();
         });
     }

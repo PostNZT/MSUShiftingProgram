@@ -2,6 +2,7 @@
 
 namespace MnkyDevTeam\Staff\Http\Requests;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Http\FormRequest;
 
 class StudentRequestGradeUploadRequest extends FormRequest
@@ -14,7 +15,7 @@ class StudentRequestGradeUploadRequest extends FormRequest
     public function rules()
     {
         return [
-            return ['attendance_csv' => 'required|file|mimetypes:text/csv,text/plain,application/vnd.ms-excel'];
+            return ['grades_csv' => 'required|file|mimetypes:text/csv,text/plain,application/vnd.ms-excel'];
         ];
     }
 
@@ -25,6 +26,6 @@ class StudentRequestGradeUploadRequest extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        return Auth::guard('staff')->check();
     }
 }
