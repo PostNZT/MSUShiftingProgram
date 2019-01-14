@@ -25,11 +25,13 @@ Route::group(
         Route::group(['middleware' => 'auth:admin', 'prefix' => 'employee', 'namespace' => 'Employee'], function () {
             Route::get('/', 'EmployeePageController')->name('admin.employee');
             Route::post('/', 'EmployeeEnlistController')->name('admin.employee.enlist');
-            Route::get('{employee}/details', 'EmployeeDetailsPageController')->name('admin.employee.details');
-            Route::patch('{employee}/details/update', 'EmployeeDetailsUpdateInfoController')
-                ->name('admin.employee.details.update-info');
-            Route::patch('{employee}/details/reset-password', 'EmployeeDetailsResetPasswordController')
-                ->name('admin.employee.details.reset-password');
+            Route::group(['prefix' => '{employee}/details'], function (){
+                Route::get('/', 'EmployeeDetailsPageController')->name('admin.employee.details');
+                Route::patch('update', 'EmployeeDetailsUpdateInfoController')
+                    ->name('admin.employee.details.update-info');
+                Route::patch('reset-password', 'EmployeeDetailsResetPasswordController')
+                    ->name('admin.employee.details.reset-password');
+            });
 
             Route::group(['prefix' => 'listing/api', 'namespace' => 'Api'], function () {
                 Route::get('/', 'EmployeeListingController@listing')
@@ -39,9 +41,16 @@ Route::group(
             });
         });
 
-        Route::group(['middleware' => 'auth:admin', 'prefix' => 'student', 'namespace' => 'Student'], function (){
-            Route::get('/listing', 'StudentListingPageController')->name('admin.student.listing');
-            Route::get('/listing/{student}/details', 'AdminStudentDetailsPageController')->name('admin.student.listing.details');
+        Route::group(['middleware' => 'auth:admin', 'prefix' => 'student/listing', 'namespace' => 'Student'], function (){
+            Route::get('/', 'StudentListingPageController')->name('admin.student.listing');
+            Route::get('{student}/details', 'AdminStudentDetailsPageController')->name('admin.student.listing.details');
+            Route::group(['prefix' => '{student}/details', 'namespace' => 'Api'], function (){
+                Route::get('/listing', 'StudentAdminGradesListingController@listing')
+                    ->name('admin.student.details.api.listing');
+                Route::get('/listing/datatable', 'StudentAdminGradesListingController@datatable')
+                    ->name('admin.student.details.api.listing.datatable');
+            });
+
 
             Route::group(['prefix' => 'api', 'namespace' => 'Api'], function() {
                 Route::get('/listing', 'AdminStudentResourceController@listing')
@@ -49,6 +58,7 @@ Route::group(
                 Route::get('/listing/datatable', 'AdminStudentResourceController@datatable')
                     ->name('admin.student.api.listing.datatable');
             });
+
         });
     }
 );
