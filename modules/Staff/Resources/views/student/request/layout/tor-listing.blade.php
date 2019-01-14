@@ -31,29 +31,20 @@
               ],
               "autoWidth":false,
               "columns": [
-                  { "data": "id", "orderable": true, "searchable": true },
-                  { "data": "student_id", "orderable": false, "searchable": true },
-                  { "data": "first_name", "orderable": false, "searchable": true },
-                  { "data": "middle_name", "orderable": false, "searchable": true },
-                  { "data": "last_name", "orderable": true, "searchable": true },
-                  { "data": "current_college", "orderable": false, "searchable": true },
-                  { "data": "current_course", "orderable": false, "searchable": true },
-                  { "data": "shifting_college", "orderable": false, "searchable": true },
-                  { "data": "shifting_course", "orderable": false, "searchable": true },
-                  { "data": "times_shifted", "orderable": false, "searchable": true },
-                  { "data": "shifting_status", "orderable": false, "searchable": true }
+                  { "data": "id", "orderable": false, "searchable": true },
+                  { "data": "semester", "orderable": false, "searchable": true },
+                  { "data": "school_year", "orderable": true, "searchable": true },
+                  { "data": "subject_code", "orderable": false, "searchable": true },
+                  { "data": "section", "orderable": true, "searchable": true },
+                  { "data": "description", "orderable": false, "searchable": true },
+                  { "data": "grade", "orderable": false, "searchable": true }
               ],
               "ajax":{
                   headers: {
                       'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                   },
-                  url: ""
+                  url: "{{\route('staff.student.details.api.listing.datatable')}}"
               }
-          });
-          // click rows
-          $('#student-table tbody').on('click', 'tr', function () {
-              var data = table.row( this ).data();
-              window.location.href = "/student/request/"+ data['uuid'] +"/details";
           });
       });
   });
