@@ -33,10 +33,15 @@ Route::group(
                 Route::get('/', 'StudentRequestPageController')->name('staff.student.request');
                 Route::post('/enlist', 'StudentRequestDataController')
                     ->name('staff.student.request.enlist');
-                Route::get('{student}/details', 'StudentRequestDetailsPageController')
-                    ->name('staff.student.request.details');
-                Route::patch('{student}/details/updateInformation', 'StudentRequestUpdateController')
-                    ->name('staff.student.request.details.update-personal-information');
+                Route::group(['prefix' => '{student}/details'], function() {
+                    Route::get('/', 'StudentRequestDetailsPageController')
+                        ->name('staff.student.request.details');
+                    Route::patch('updateInformation', 'StudentRequestUpdateController')
+                        ->name('staff.student.request.details.update-personal-information');
+                    Route::post('uploadInformation', 'StudentRequestUploadGradesController')
+                        ->name('staff.student.request.details.upload-grades-information');
+                });
+
             });
 
             Route::group(['prefix' => 'upload', 'namespace' => 'Upload'], function() {
