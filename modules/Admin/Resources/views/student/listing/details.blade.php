@@ -67,14 +67,14 @@
 
 @section('content')
 <div class="row mt">
-  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+  <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
     <section class="panel">
       <div class="panel-body">
           @include('admin::student.listing.layouts.details-student-profile-box')
       </div>
     </section>
   </div>
-  <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+  <div class="col-lg-9 col-md-8 col-sm-8 col-xs-12">
     <section class="panel">
       <div class="panel-body">
             @include('admin::student.listing.layouts.details-student-data-box')

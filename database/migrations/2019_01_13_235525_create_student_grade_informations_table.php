@@ -24,6 +24,9 @@ class CreateStudentGradeInformationsTable extends Migration
             $table->string('section');
             $table->string('description');
             $table->string('grade');
+            $table->string('numbers_taken');
+            $table->string('units');
+            $table->string('prerequisite');
             $table->string('batch_file');
             $table->string('file_path');
             $table->timestamps();

@@ -24,6 +24,9 @@ final class StudentGrades extends JsonResource
             'section'           => $this->section,
             'description'       => $this->description,
             'grade'             => $this->grade,
+            'numbers_taken'     => $this->numbers_taken,
+            'units'             => $this->units,
+            'prerequisite'      => $this->prerequisite,
             'student_id'        => $this->student_id
         ];
     }

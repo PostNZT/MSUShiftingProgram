@@ -28,6 +28,9 @@
                   <th><i class=" fa fa-edit">Section</th>
                   <th><i class=" fa fa-edit">Description</th>
                   <th><i class=" fa fa-edit">Grade</th>
+                  <th><i class=" fa fa-edit">Numbers Taken</th>
+                  <th><i class=" fa fa-edit">Units</th>
+                  <th><i class=" fa fa-edit">Pre Requesite</th>
                 </tr>
               </thead>
             </table>
@@ -101,7 +104,10 @@
                   { "data": "subject_code", "orderable": false, "searchable": true },
                   { "data": "section", "orderable": true, "searchable": true },
                   { "data": "description", "orderable": false, "searchable": true },
-                  { "data": "grade", "orderable": false, "searchable": true }
+                  { "data": "grade", "orderable": false, "searchable": true },
+                  { "data": "numbers_taken", "orderable": false, "searchable": true },
+                  { "data": "units", "orderable": false, "searchable": true },
+                  { "data": "prerequisite", "orderable": false, "searchable": true }
               ],
               "ajax":{
                   headers: {

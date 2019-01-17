@@ -33,7 +33,8 @@ class StudentRequestUploadGradesController extends Controller
         $gradesCSV->setHeaderOffset(0);
         $records = $gradesCSV->getRecords(['semester', 'school_year',
             'subject_code', 'section',
-            'description', 'grade'
+            'description', 'grade', 'numbers_taken',
+            'units', 'prerequisite'
           ]);
         $datas = [];
         foreach ($records as $index => $row) {

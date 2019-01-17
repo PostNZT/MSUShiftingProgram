@@ -26,7 +26,7 @@ class UserDatabaseSeeder extends Seeder
         return [
             [
                 'username' => 'msu.admin',
-                'password' => \bcrypt('msu.admin'),
+                'password' => \bcrypt('admin123'),
                 'first_name' => 'MSU',
                 'middle_name' => 'System',
                 'last_name' => 'Admin',
